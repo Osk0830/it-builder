@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+@media all and (-ms-high-contrast: none){
+  html, body, button, input, select, textarea {
+    font-family: "メイリオ", Meiryo, sans-serif;
+  }
+}
+
+body {
+  zoom: 85%;
+  position: relative;
+}
+.header {
+  position: absolute;
+  min-width: 0;
+}
