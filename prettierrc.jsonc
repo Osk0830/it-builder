@@ -35,10 +35,10 @@
   // --- プラグイン（Astro/Tailwind などの拡張） ---
   "plugins": [
     "prettier-plugin-astro", // .astro の整形サポート
-    "prettier-plugin-tailwindcss", // Tailwind クラスの並び最適化
+    "prettier-plugin-tailwindcss" // Tailwind クラスの並び最適化
   ],
   "pluginSearchDirs": [
-    ".", // モノレポ等でのルート解決安定化。失敗時のみ残す
+    "." // モノレポ等でのルート解決安定化。失敗時のみ残す
   ],
 
   // --- 拡張子ごとの上書き（overrides） ---
@@ -47,14 +47,14 @@
       "files": "*.md",
       "options": {
         "printWidth": 80, // 文章は読みやすい80桁に
-        "proseWrap": "always", // 自動折返しで執筆体験を優先
-      },
+        "proseWrap": "always" // 自動折返しで執筆体験を優先
+      }
     },
     {
       "files": "*.astro",
       "options": {
-        "singleAttributePerLine": true, // コンポーネント属性は縦に並べて可読性UP
-      },
-    },
-  ],
+        "singleAttributePerLine": true // コンポーネント属性は縦に並べて可読性UP
+      }
+    }
+  ]
 }
