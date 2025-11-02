@@ -1,7 +1,12 @@
 @charset "UTF-8";
 
-@media all and (-ms-high-contrast: none){
-  html, body, button, input, select, textarea {
+@media all and (-ms-high-contrast: none) {
+  html,
+  body,
+  button,
+  input,
+  select,
+  textarea {
     font-family: "メイリオ", Meiryo, sans-serif;
   }
 }
