@@ -6,13 +6,13 @@
 
 (function (factory) {
   // eslint-disable-line no-extra-semi
-  "use strict";
-  if (typeof define === "function" && define.amd) {
+  'use strict';
+  if (typeof define === 'function' && define.amd) {
     // AMD
-    define(["jquery"], factory);
-  } else if (typeof module !== "undefined" && module.exports) {
+    define(['jquery'], factory);
+  } else if (typeof module !== 'undefined' && module.exports) {
     // CommonJS
-    module.exports = factory(require("jquery"));
+    module.exports = factory(require('jquery'));
   } else {
     // Global
     factory(jQuery);
@@ -50,7 +50,7 @@
     // group elements by their top position
     $elements.each(function () {
       var $that = $(this),
-        top = $that.offset().top - _parse($that.css("margin-top")),
+        top = $that.offset().top - _parse($that.css('margin-top')),
         lastRow = rows.length > 0 ? rows[rows.length - 1] : null;
 
       if (lastRow === null) {
@@ -81,18 +81,18 @@
   var _parseOptions = function (options) {
     var opts = {
       byRow: true,
-      property: "height",
+      property: 'height',
       target: null,
       remove: false,
     };
 
-    if (typeof options === "object") {
+    if (typeof options === 'object') {
       return $.extend(opts, options);
     }
 
-    if (typeof options === "boolean") {
+    if (typeof options === 'boolean') {
       opts.byRow = options;
-    } else if (options === "remove") {
+    } else if (options === 'remove') {
       opts.remove = true;
     }
 
@@ -112,7 +112,7 @@
       var that = this;
 
       // remove fixed height from all selected elements
-      this.css(opts.property, "");
+      this.css(opts.property, '');
 
       // remove selected elements from all groups
       $.each(matchHeight._groups, function (key, group) {
@@ -144,7 +144,7 @@
    *  plugin global options
    */
 
-  matchHeight.version = "master";
+  matchHeight.version = 'master';
   matchHeight._groups = [];
   matchHeight._throttle = 80;
   matchHeight._maintainScroll = false;
@@ -166,49 +166,45 @@
 
     // take note of scroll position
     var scrollTop = $(window).scrollTop(),
-      htmlHeight = $("html").outerHeight(true);
+      htmlHeight = $('html').outerHeight(true);
 
     // get hidden parents
-    var $hiddenParents = $elements.parents().filter(":hidden");
+    var $hiddenParents = $elements.parents().filter(':hidden');
 
     // cache the original inline style
     $hiddenParents.each(function () {
       var $that = $(this);
-      $that.data("style-cache", $that.attr("style"));
+      $that.data('style-cache', $that.attr('style'));
     });
 
     // temporarily must force hidden parents visible
-    $hiddenParents.css("display", "block");
+    $hiddenParents.css('display', 'block');
 
     // get rows if using byRow, otherwise assume one row
     if (opts.byRow && !opts.target) {
       // must first force an arbitrary equal height so floating elements break evenly
       $elements.each(function () {
         var $that = $(this),
-          display = $that.css("display");
+          display = $that.css('display');
 
         // temporarily force a usable display value
-        if (
-          display !== "inline-block" &&
-          display !== "flex" &&
-          display !== "inline-flex"
-        ) {
-          display = "block";
+        if (display !== 'inline-block' && display !== 'flex' && display !== 'inline-flex') {
+          display = 'block';
         }
 
         // cache the original inline style
-        $that.data("style-cache", $that.attr("style"));
+        $that.data('style-cache', $that.attr('style'));
 
         $that.css({
           display: display,
-          "padding-top": "0",
-          "padding-bottom": "0",
-          "margin-top": "0",
-          "margin-bottom": "0",
-          "border-top-width": "0",
-          "border-bottom-width": "0",
-          height: "100px",
-          overflow: "hidden",
+          'padding-top': '0',
+          'padding-bottom': '0',
+          'margin-top': '0',
+          'margin-bottom': '0',
+          'border-top-width': '0',
+          'border-bottom-width': '0',
+          height: '100px',
+          overflow: 'hidden',
         });
       });
 
@@ -218,7 +214,7 @@
       // revert original inline styles
       $elements.each(function () {
         var $that = $(this);
-        $that.attr("style", $that.data("style-cache") || "");
+        $that.attr('style', $that.data('style-cache') || '');
       });
     }
 
@@ -229,28 +225,24 @@
       if (!opts.target) {
         // skip apply to rows with only one item
         if (opts.byRow && $row.length <= 1) {
-          $row.css(opts.property, "");
+          $row.css(opts.property, '');
           return;
         }
 
         // iterate the row and find the max height
         $row.each(function () {
           var $that = $(this),
-            style = $that.attr("style"),
-            display = $that.css("display");
+            style = $that.attr('style'),
+            display = $that.css('display');
 
           // temporarily force a usable display value
-          if (
-            display !== "inline-block" &&
-            display !== "flex" &&
-            display !== "inline-flex"
-          ) {
-            display = "block";
+          if (display !== 'inline-block' && display !== 'flex' && display !== 'inline-flex') {
+            display = 'block';
           }
 
           // ensure we get the correct actual height (and not a previously set height value)
           var css = { display: display };
-          css[opts.property] = "";
+          css[opts.property] = '';
           $that.css(css);
 
           // find the max height (including padding, but not margin)
@@ -260,9 +252,9 @@
 
           // revert styles
           if (style) {
-            $that.attr("style", style);
+            $that.attr('style', style);
           } else {
-            $that.css("display", "");
+            $that.css('display', '');
           }
         });
       } else {
@@ -281,31 +273,25 @@
         }
 
         // handle padding and border correctly (required when not using border-box)
-        if ($that.css("box-sizing") !== "border-box") {
-          verticalPadding +=
-            _parse($that.css("border-top-width")) +
-            _parse($that.css("border-bottom-width"));
-          verticalPadding +=
-            _parse($that.css("padding-top")) +
-            _parse($that.css("padding-bottom"));
+        if ($that.css('box-sizing') !== 'border-box') {
+          verticalPadding += _parse($that.css('border-top-width')) + _parse($that.css('border-bottom-width'));
+          verticalPadding += _parse($that.css('padding-top')) + _parse($that.css('padding-bottom'));
         }
 
         // set the height (accounting for padding and border)
-        $that.css(opts.property, targetHeight - verticalPadding + "px");
+        $that.css(opts.property, targetHeight - verticalPadding + 'px');
       });
     });
 
     // revert hidden parents
     $hiddenParents.each(function () {
       var $that = $(this);
-      $that.attr("style", $that.data("style-cache") || null);
+      $that.attr('style', $that.data('style-cache') || null);
     });
 
     // restore scroll position if enabled
     if (matchHeight._maintainScroll) {
-      $(window).scrollTop(
-        (scrollTop / htmlHeight) * $("html").outerHeight(true),
-      );
+      $(window).scrollTop((scrollTop / htmlHeight) * $('html').outerHeight(true));
     }
 
     return this;
@@ -320,9 +306,9 @@
     var groups = {};
 
     // generate groups by their groupId set by elements using data-match-height
-    $("[data-match-height], [data-mh]").each(function () {
+    $('[data-match-height], [data-mh]').each(function () {
       var $this = $(this),
-        groupId = $this.attr("data-mh") || $this.attr("data-match-height");
+        groupId = $this.attr('data-mh') || $this.attr('data-match-height');
 
       if (groupId in groups) {
         groups[groupId] = groups[groupId].add($this);
@@ -360,7 +346,7 @@
     // prevent update if fired from a resize event
     // where the viewport width hasn't actually changed
     // fixes an event looping bug in IE8
-    if (event && event.type === "resize") {
+    if (event && event.type === 'resize') {
       var windowWidth = $(window).width();
       if (windowWidth === _previousResizeWidth) {
         return;
@@ -387,15 +373,15 @@
   $(matchHeight._applyDataApi);
 
   // use on or bind where supported
-  var on = $.fn.on ? "on" : "bind";
+  var on = $.fn.on ? 'on' : 'bind';
 
   // update heights on load and resize events
-  $(window)[on]("load", function (event) {
+  $(window)[on]('load', function (event) {
     matchHeight._update(false, event);
   });
 
   // throttled update heights on resize events
-  $(window)[on]("resize orientationchange", function (event) {
+  $(window)[on]('resize orientationchange', function (event) {
     matchHeight._update(true, event);
   });
 });

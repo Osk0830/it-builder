@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json.schemastore.org/prettierrc",
+  "printWidth": 200,
+  "tabWidth": 2,
+  "useTabs": false,
+  "endOfLine": "lf",
+  "semi": true,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "bracketSpacing": true,
+  "arrowParens": "always",
+  "jsxSingleQuote": false,
+  "bracketSameLine": false,
+  "htmlWhitespaceSensitivity": "css",
+  "singleAttributePerLine": false,
+  "proseWrap": "preserve",
+  "embeddedLanguageFormatting": "auto",
+  "overrides": [
+    {
+      "files": "*.md",
+      "options": { "printWidth": 80, "proseWrap": "always" }
+    },
+    {
+      "files": "*.astro",
+      "options": { "singleAttributePerLine": true }
+    },
+    {
+      "files": "*.html",
+      "options": { "parser": "html", "singleAttributePerLine": false, "printWidth": 1000 }
+    }
+  ]
+}
