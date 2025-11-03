@@ -16,11 +16,11 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   position: relative;
   height: 100vh;
-  background: url(../img/top_visual_bg.jpg) no-repeat 50% 50%/cover;
+  background: url(../img/top_visual_bg.jpg) no-repeat 50% 50% / cover;
   color: #fff;
 }
 .keyvisual > .inner {
@@ -28,11 +28,11 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding-left: 45px;
   padding-top: 100px;
 }
@@ -121,7 +121,8 @@
 /* -------------------------
   top
 ------------------------- */
-.topTitle, .topTitle--min {
+.topTitle,
+.topTitle--min {
   margin: 0 0 30px;
   font-size: 4rem;
   font-weight: 500;
@@ -154,7 +155,8 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .topTitle, .topTitle--min {
+  .topTitle,
+  .topTitle--min {
     margin: 0 0 25px;
     font-size: 2rem;
   }
@@ -224,8 +226,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   margin: 90px 0 80px;
 }
 .cost__topArea__info {
@@ -233,7 +235,7 @@
   display: -ms-flexbox;
   display: flex;
   -ms-flex-negative: 0;
-      flex-shrink: 0;
+  flex-shrink: 0;
   width: 700px;
 }
 .cost__graf {
@@ -254,7 +256,9 @@
 .costPoint {
   margin: 30px 35px 0 0;
 }
-.costPoint__title, .costPoint__title--user, .costPoint__title--trial {
+.costPoint__title,
+.costPoint__title--user,
+.costPoint__title--trial {
   position: relative;
   margin: 0 0 25px;
   padding: 0 0 0 75px;
@@ -262,7 +266,8 @@
   font-weight: 500;
   color: #341e22;
 }
-.costPoint__title--user::before, .costPoint__title--trial::before {
+.costPoint__title--user::before,
+.costPoint__title--trial::before {
   content: "";
   position: absolute;
   left: 0;
@@ -271,10 +276,10 @@
   height: 48px;
 }
 .costPoint__title--user::before {
-  background: url(../img/ic_cost_user.png) no-repeat 0 50%/contain;
+  background: url(../img/ic_cost_user.png) no-repeat 0 50% / contain;
 }
 .costPoint__title--trial::before {
-  background: url(../img/ic_cost_trial.png) no-repeat 0 50%/contain;
+  background: url(../img/ic_cost_trial.png) no-repeat 0 50% / contain;
 }
 .costPoint__text {
   margin: 0 0 40px;
@@ -288,7 +293,7 @@
   .cost__topArea {
     margin: 45px 0 0;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
   }
   .cost__topArea__info {
     width: 100%;
@@ -305,15 +310,18 @@
   .costPoint {
     margin: 40px 0px 15px;
     -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
+    -ms-flex-order: 2;
+    order: 2;
   }
-  .costPoint__title, .costPoint__title--user, .costPoint__title--trial {
+  .costPoint__title,
+  .costPoint__title--user,
+  .costPoint__title--trial {
     margin: 0 0 10px;
     padding: 0 0 0 65px;
     font-size: 1.6rem;
   }
-  .costPoint__title--user::before, .costPoint__title--trial::before {
+  .costPoint__title--user::before,
+  .costPoint__title--trial::before {
     width: 65px;
     height: 40px;
   }
@@ -331,8 +339,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   list-style: none;
   margin: 75px 0 0;
 }
@@ -350,8 +358,8 @@
 }
 .installationBox__item {
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   text-align: center;
 }
 .installationBox__item:not(:first-child) {
@@ -363,13 +371,13 @@
   display: flex;
   height: 120px;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   margin: 0 auto 25px;
   padding: 10px;
   border: 1px solid #ebe7df;
