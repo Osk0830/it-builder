@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Barlow:400,500,600");
+@import url('https://fonts.googleapis.com/css?family=Barlow:400,500,600');
 .keyvisual__slide {
   opacity: 0;
 }
@@ -268,7 +268,7 @@
 }
 .costPoint__title--user::before,
 .costPoint__title--trial::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: -10px;

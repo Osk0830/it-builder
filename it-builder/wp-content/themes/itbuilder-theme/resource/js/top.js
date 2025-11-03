@@ -2,7 +2,7 @@
 var tabWidth = 768;
 
 //リサイズ
-$(window).on("load resize", function () {
+$(window).on('load resize', function () {
   slideHuck();
   slideHuck2();
 });
@@ -10,7 +10,7 @@ $(window).on("load resize", function () {
 function slideHuck() {
   if ($(window).width() <= tabWidth) {
     //スマホ
-    $(".js-installationBox").slick({
+    $('.js-installationBox').slick({
       dots: true,
       arrows: true,
       centerMode: true,
@@ -21,7 +21,7 @@ function slideHuck() {
 
 function slideHuck2() {
   //slider
-  $(".js-keyvisual").slick({
+  $('.js-keyvisual').slick({
     autoplay: true,
     dots: true,
     centerMode: true,
@@ -35,7 +35,7 @@ function slideHuck2() {
       },
     ],
   });
-  $(".js-serviceBox").slick({
+  $('.js-serviceBox').slick({
     dots: true,
     arrows: true,
     centerMode: true,
