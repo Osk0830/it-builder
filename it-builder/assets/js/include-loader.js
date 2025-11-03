@@ -19,10 +19,7 @@
   /** =========================
    *  ユーティリティ
    * ======================= */
-  const ready = (fn) =>
-    (document.readyState !== 'loading')
-      ? fn()
-      : document.addEventListener('DOMContentLoaded', fn, { once: true });
+  const ready = (fn) => (document.readyState !== 'loading' ? fn() : document.addEventListener('DOMContentLoaded', fn, { once: true }));
 
   const isAbsURL = (u) => /^https?:\/\//i.test(u);
   const isRootRel = (u) => u.startsWith('/');

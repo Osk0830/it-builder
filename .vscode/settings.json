@@ -12,32 +12,44 @@
   "liveSassCompile.settings.autoprefix": [],
   "genieai.openai.model": "gpt-4",
 
-  // ====== ここから追記・調整 ======
-  // 保存時に必ず Prettier を使う
+  // ===== Prettier を唯一の整形に固定 =====
   "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[html]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[scss]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[astro]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
 
-  // 内蔵フォーマッタ/競合をオフにして Prettier を確実に当てる
+  // 言語別も明示（競合防止）
+  "[html]":        { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[astro]":       { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[javascript]":  { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[typescript]":  { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[scss]":        { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[json]":        { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+
+  // 内蔵フォーマッタ/競合系はOFF
   "html.format.enable": false,
+  "css.format.enable": false,
   "javascript.format.enable": false,
   "typescript.format.enable": false,
 
-  // Prettier 側の実行を強制（ルートに設定がないと動かさない → 設定の所在を明確化）
+  // Prettier 設定がある時だけ実行（プロジェクト設定を厳守）
   "prettier.requireConfig": true,
 
-  // 折返しを抑えて属性の改行を起きにくく（完全防止は仕様上不可）
-  "prettier.printWidth": 240,
+  // エディタ側のEOLもLFで統一（色崩れの元になる未統一を防ぐ）
+  "files.eol": "\n",
+
+  // ===== Prettier の挙動を安定化 =====
+  // HTMLの空白感度を緩くして、不要な改行・折返しの暴れを抑制
+  "prettier.htmlWhitespaceSensitivity": "ignore",
+  // 属性をむやみに折り返さない（ぶら下がり'>'の誘発を抑える）
   "prettier.singleAttributePerLine": false,
-
-  // HTML の閉じ括弧の改行は読みやすさ優先（必要なら true に）
+  // 閉じカッコ改行は従来どおり（必要なら true に）
   "prettier.bracketSameLine": false,
+  // 長めにしてレイアウト崩れを回避（プロジェクト側prettierrcが優先）
+  "prettier.printWidth": 240,
 
-  // CSS 準拠の空白扱い（HTMLの意図しない整形を避ける）
-  "prettier.htmlWhitespaceSensitivity": "css"
-  // ====== 追記ここまで ======
+  // ===== 誤判定（JSX扱い）を避けるための関連付け =====
+  "files.associations": {
+    "*.html": "html",
+    "*.astro": "astro"
+  }
 }

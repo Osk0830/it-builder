@@ -11,22 +11,17 @@
   "arrowParens": "always",
   "jsxSingleQuote": false,
   "bracketSameLine": false,
-  "htmlWhitespaceSensitivity": "css",
+  "htmlWhitespaceSensitivity": "ignore",
   "singleAttributePerLine": false,
   "proseWrap": "preserve",
   "embeddedLanguageFormatting": "auto",
+
+  "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
+  "pluginSearchDirs": ["."],
+
   "overrides": [
-    {
-      "files": "*.md",
-      "options": { "printWidth": 80, "proseWrap": "always" }
-    },
-    {
-      "files": "*.astro",
-      "options": { "singleAttributePerLine": true }
-    },
-    {
-      "files": "*.html",
-      "options": { "parser": "html", "singleAttributePerLine": false, "printWidth": 1000 }
-    }
+    { "files": "*.md", "options": { "printWidth": 80, "proseWrap": "always" } },
+    { "files": "*.astro", "options": { "parser": "astro", "singleAttributePerLine": true } },
+    { "files": "*.html", "options": { "parser": "html", "singleAttributePerLine": false, "printWidth": 1000 } }
   ]
 }
