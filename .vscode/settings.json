@@ -1,43 +1,40 @@
 {
-  "liveSassCompile.settings.formats": [
-    {
-      "format": "expanded",
-      "extensionName": ".css",
-      "savePath": "/it-chan/assets/css"
-    }
-  ],
+  "liveSassCompile.settings.formats": [{ "format": "expanded", "extensionName": ".css", "savePath": "/it-chan/assets/css" }],
   "liveServer.settings.donotShowInfoMsg": true,
   "liveSassCompile.settings.rootIsWorkspace": false,
   "liveSassCompile.settings.generateMap": true,
   "liveSassCompile.settings.autoprefix": [],
-  "genieai.openai.model": "gpt-4",
 
-  // ====== ここから追記・調整 ======
-  // 保存時に必ず Prettier を使う
+  // ===== Prettier を唯一の整形に固定（Astro/JSXは不使用） =====
   "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // 言語別（HTML/CSS/SCSS/JS のみ）
   "[html]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[css]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   "[scss]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[astro]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
 
-  // 内蔵フォーマッタ/競合をオフにして Prettier を確実に当てる
+  // 内蔵フォーマッタを無効化（競合防止）
   "html.format.enable": false,
+  "css.format.enable": false,
   "javascript.format.enable": false,
-  "typescript.format.enable": false,
 
-  // Prettier 側の実行を強制（ルートに設定がないと動かさない → 設定の所在を明確化）
+  // ワークスペースに .prettierrc がある時だけ実行（プロジェクト準拠）
   "prettier.requireConfig": true,
 
-  // 折返しを抑えて属性の改行を起きにくく（完全防止は仕様上不可）
-  "prettier.printWidth": 240,
+  // 改行・レイアウトの安定化（“ぶら下がり >” を出にくく）
+  "prettier.htmlWhitespaceSensitivity": "ignore",
   "prettier.singleAttributePerLine": false,
-
-  // HTML の閉じ括弧の改行は読みやすさ優先（必要なら true に）
   "prettier.bracketSameLine": false,
+  "prettier.printWidth": 240,
 
-  // CSS 準拠の空白扱い（HTMLの意図しない整形を避ける）
-  "prettier.htmlWhitespaceSensitivity": "css"
-  // ====== 追記ここまで ======
+  // JSX/ASTRO を使わないので関連付けは HTML のみを明示
+  "files.associations": {
+    "*.html": "html"
+  },
+
+  // EOL を LF に統一（混在で色崩れする事故を予防）
+  "files.eol": "\n"
 }
