@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D733JDSWR7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-D733JDSWR7');
+    </script>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>イットbuilder販売開始 &#8211; イットbuilder</title>
+    <meta name="robots" content="max-image-preview:large" />
+
+    <link rel="stylesheet" href="/it-builder/wp-includes/css/dist/block-library/style.min.css%3Fver=6.1.7.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="/it-builder/wp-includes/css/classic-themes.min.css%3Fver=1.css" type="text/css" media="all" />
+    <link rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" id="slick_style-css" href="/it-builder/wp-content/plugins/lw-wae-contents-editor/aos/slick.css%3Fver=6.1.7.css" type="text/css" media="all" />
+    <script type="text/javascript"></script>
+    <link type="application/rsd+xml" title="RSD" href="/it-builder/xmlrpc.php%3Frsd" />
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" />
+    <link rel="canonical" href="/it-builder/news/news0002436/index.html" />
+    <link rel="alternate" />
+    <link rel="alternate" />
+    <meta name="description" content="イットbuilderは業務のお悩みを軽快かつスピーディに改善できるWeb業務アプリ作成ツールです。標準部品を組み合わせるだけで、日頃のお困りごとを解決する業務アプリを自分たちの手で簡単に作成できます。" />
+    <script src="/it-builder/wp-content/themes/itbuilder-theme/resource/js/viewport.js"></script>
+    <link rel="icon" href="/it-builder/wp-content/themes/itbuilder-theme/resource/sns/favicon.ico" />
+    <link rel="shortcut icon" href="/it-builder/wp-content/themes/itbuilder-theme/resource/sns/favicon.ico" />
+    <link rel="apple-touch-icon" href="https://www.it-builder.jp/apple-touch-icon.png" />
+    <link rel="stylesheet" href="/it-builder/wp-content/themes/itbuilder-theme/resource/css/common.css%3F=1.2.2.css" />
+    <link rel="stylesheet" media="print" href="/it-builder/wp-content/themes/itbuilder-theme/resource/css/print.css%3Fvar=0.1.css" />
+  </head>
+  <body data-rsssl="1">
+    <div data-include="header"></div>
+    <div class="pageVisual--min" style="background-image: url(../../wp-content/themes/itbuilder-theme/resource/img/news_visual_bg.jpg)">
+      <p class="pageVisual__en">
+        <img src="/it-builder/wp-content/themes/itbuilder-theme/resource/img/title_news_white.png" alt="お知らせ" />
+      </p>
+      <h1 class="pageVisual__title">お知らせ</h1>
+    </div>
+    <div class="newsDetail">
+      <div class="inner l-row">
+        <section class="newsDetailBox">
+          <div class="newsDetailBox__head">
+            <time class="newsDetailBox__date">2016.11.01</time>
+            <ul class="newsDetailBox__tag">
+              <li class="newsDetailBox__tag__item">お知らせ</li>
+            </ul>
+            <h2 class="newsDetailBox__title">イットbuilder販売開始</h2>
+          </div>
+          <div class="newsDetailBox__body">
+            <section class="wae-section wae-section-margin-moderate">
+              <div class="wae-section-column wae-section-column1 wae-section-margin-small">
+                <div class="wae-section-block">
+                  <figure class="wae-section-margin-moderate">
+                    <img decoding="async" src="/it-builder/wp-content/uploads/2018/08/news_20180906_img02.jpg" />
+                  </figure>
+                </div>
+              </div>
+              <div class="wae-section-column wae-section-column2 wae-section-margin-moderate">
+                <div class="wae-section-block bwidth68">
+                  <p class="wae-section-margin-moderate">
+                    11月1日、イットbuilderを販売開始しました。
+                    <br />
+                    中電シーティーアイが開発し中部電力へ納入した「組立型アプリ作成・実行基盤」は、簡単にWebアプリを作ることができるツールとして中部電力およびグループ企業で活用され、業務効率化に貢献しています。
+                    <br />
+                    この便利さを中部電力グループ以外の皆様にもご提供したいと考え、「組立型アプリ作成・実行基盤」を基に、より使いやすく低コストで利用できるものとして誕生したのが、「イットbuilder」です。
+                    <br />
+                    ぜひ、イットbuilderを皆様の業務改善にお役立てください。
+                  </p>
+                </div>
+                <div class="wae-section-block bwidth32">
+                  <figure class="wae-section-margin-moderate">
+                    <img decoding="async" src="/it-builder/wp-content/uploads/2018/08/news_20161101_img01.jpg" />
+                  </figure>
+                </div>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <ul class="newsMenu">
+          <li class="newsMenu__item">
+            <a class="newsMenu__anchor" href="/it-builder/2024/index.html%3Fpost_type=news.html">2024</a>
+          </li>
+          <li class="newsMenu__item">
+            <a class="newsMenu__anchor" href="/it-builder/2023/index.html%3Fpost_type=news.html">2023</a>
+          </li>
+          <li class="newsMenu__item">
+            <a class="newsMenu__anchor" href="/it-builder/2022/index.html%3Fpost_type=news.html">2022</a>
+          </li>
+          <li class="newsMenu__item">
+            <a class="newsMenu__anchor" href="/it-builder/2020/index.html%3Fpost_type=news.html">2020</a>
+          </li>
+          <li class="newsMenu__item">
+            <a class="newsMenu__anchor" href="/it-builder/2019/index.html%3Fpost_type=news.html">2019</a>
+          </li>
+          <li class="newsMenu__item">
+            <a class="newsMenu__anchor" href="/it-builder/2018/index.html%3Fpost_type=news.html">2018</a>
+          </li>
+          <li class="newsMenu__item">
+            <a class="newsMenu__anchor" href="/it-builder/2017/index.html%3Fpost_type=news.html">2017</a>
+          </li>
+          <li class="newsMenu__item">
+            <a class="newsMenu__anchor" href="/it-builder/2016/index.html%3Fpost_type=news.html">2016</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div data-include="footer"></div>
+
+    <script src="/it-builder/assets/js/include-loader.js" defer></script>
+
+    <script src="/it-builder/wp-content/themes/itbuilder-theme/resource/js/lib/jquery.js"></script>
+    <script src="/it-builder/wp-content/themes/itbuilder-theme/resource/js/lib/slick.min.js"></script>
+    <script src="/it-builder/wp-content/themes/itbuilder-theme/resource/js/lib/jquery.matchHeight.js"></script>
+    <script src="/it-builder/wp-content/themes/itbuilder-theme/resource/js/common.js"></script>
+    <script type="text/javascript" src="/it-builder/wp-content/plugins/lw-wae-contents-editor/js/wae-section.js%3Fver=1.1" id="wae_front_script-js"></script>
+    <script type="text/javascript" src="/it-builder/wp-content/plugins/lw-wae-contents-editor/js/library.js%3Fver=1.1" id="wae_library_script-js"></script>
+    <div data-include="sprite"></div>
+  </body>
+</html>
