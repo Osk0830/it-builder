@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D733JDSWR7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-D733JDSWR7');
+    </script>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>高度なアプリ作成にもイットbuilder &#8211; イットbuilder</title>
+    <meta name="robots" content="max-image-preview:large" />
+
+    <link rel="stylesheet" href="/it-builder/wp-includes/css/dist/block-library/style.min.css%3Fver=6.1.7.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="/it-builder/wp-includes/css/classic-themes.min.css%3Fver=1.css" type="text/css" media="all" />
+    <link rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" id="slick_style-css" href="/it-builder/wp-content/plugins/lw-wae-contents-editor/aos/slick.css%3Fver=6.1.7.css" type="text/css" media="all" />
+    <script type="text/javascript"></script>
+    <link rel="alternate" type="application/json" href="/it-builder/wp-json/wp/v2/pages/194" />
+    <link type="application/rsd+xml" title="RSD" href="/it-builder/xmlrpc.php%3Frsd" />
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" />
+    <!-- FIXME: canonical removed: <link rel="canonical" href="/_orphans/" /> -->
+    <link rel="alternate" />
+    <link rel="alternate" />
+    <meta name="description" content="イットbuilderは業務のお悩みを軽快かつスピーディに改善できるWeb業務アプリ作成ツールです。標準部品を組み合わせるだけで、日頃のお困りごとを解決する業務アプリを自分たちの手で簡単に作成できます。" />
+    <script src="/it-builder/wp-content/themes/itbuilder-theme/resource/js/viewport.js"></script>
+    <link rel="icon" href="/it-builder/wp-content/themes/itbuilder-theme/resource/sns/favicon.ico" />
+    <link rel="shortcut icon" href="/it-builder/wp-content/themes/itbuilder-theme/resource/sns/favicon.ico" />
+    <link rel="apple-touch-icon" href="https://www.it-builder.jp/apple-touch-icon.png" />
+    <link rel="stylesheet" href="/it-builder/wp-content/themes/itbuilder-theme/resource/css/common.css%3F=1.2.2.css" />
+    <link rel="stylesheet" media="print" href="/it-builder/wp-content/themes/itbuilder-theme/resource/css/print.css%3Fvar=0.1.css" />
+  </head>
+  <body data-rsssl="1">
+    <div data-include="header"></div>
+    <div class="pageVisual" style="background-image: url(../../wp-content/uploads/2018/09/about_visual_bg.jpg)">
+      <p class="pageVisual__en">
+        <img src="/it-builder/wp-content/uploads/2018/07/title_advancedcase_white.png" alt="高度なアプリ作成にもイットbuilder" />
+      </p>
+      <h1 class="pageVisual__title">高度なアプリ作成にもイットbuilder</h1>
+    </div>
+    <div class="wae">
+      <section class="wae-section-html wae-section-margin-moderate">
+        <nav class="aboutNav">
+          <ul class="aboutNav__list inner">
+            <li class="aboutNav__list__item">
+              <a href="/it-builder/about/" class="aboutNav__list__anchor">イットbuilderとは</a>
+            </li>
+            <li class="aboutNav__list__item">
+              <a href="/_orphans/" class="aboutNav__list__anchor">
+                イットbuilderが
+                <br class="spShow" />
+                選ばれる理由
+              </a>
+            </li>
+            <li class="aboutNav__list__item">
+              <a href="/_orphans/" class="aboutNav__list__anchor">
+                イットbuilderアプリ
+                <br />
+                3つの作り方
+              </a>
+            </li>
+            <li class="aboutNav__list__item">
+              <a href="/_orphans/" class="aboutNav__list__anchor is-active">
+                高度なアプリ作成にも
+                <br />
+                イットbuilder
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+      <section class="wae-section wae-section-margin-moderate">
+        <div class="wae-section-base-width">
+          <div class="wae-section-column wae-section-column1 wae-section-margin-moderate">
+            <div class="wae-section-block">
+              <div class="wae-section-lead wae-section-center wae-section-margin-moderate">
+                <p>
+                  イットbuilderは、簡単にアプリを作成できる機能を備えるほか、
+                  <br class="pcShow" />
+                  プログラミング経験を有する情報システムご担当者などのご利用を想定して、
+                  <br class="pcShow" />
+                  高度な業務アプリ開発にも耐えうるよう設計されています。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="wae-section-html wae-section-margin-moderate">
+        <div class="inner">
+          <ul class="pageLink">
+            <li class="pageLink__item">
+              <a href="/_orphans/" class="pageLink__anchor"><span>条件による分岐機能部品</span></a>
+            </li>
+            <li class="pageLink__item">
+              <a href="/_orphans/" class="pageLink__anchor"><span>自動入力機能</span></a>
+            </li>
+            <li class="pageLink__item">
+              <a href="/_orphans/" class="pageLink__anchor"><span>1対N形式データ表示機能</span></a>
+            </li>
+            <li class="pageLink__item">
+              <a href="/_orphans/" class="pageLink__anchor"><span>PDF出力機能</span></a>
+            </li>
+            <li class="pageLink__item">
+              <a href="/_orphans/" class="pageLink__anchor"><span>Excel出力機能</span></a>
+            </li>
+            <li class="pageLink__item">
+              <a href="/_orphans/" class="pageLink__anchor"><span>CSV出力機能</span></a>
+            </li>
+            <li class="pageLink__item">
+              <a href="/_orphans/" class="pageLink__anchor"><span>表形式データ編集機能</span></a>
+            </li>
+            <li class="pageLink__item">
+              <a href="/_orphans/" class="pageLink__anchor"><span>バッチアプリ作成機能</span></a>
+            </li>
+            <li class="pageLink__item">
+              <a href="/_orphans/" class="pageLink__anchor"><span>ドキュメント作成機能</span></a>
+            </li>
+            <li class="pageLink__item">
+              <a href="/_orphans/" class="pageLink__anchor"><span>複数ユーザーマスター作成機能</span></a>
+            </li>
+            <li class="pageLink__item">
+              <a href="/_orphans/" class="pageLink__anchor"><span>認証基盤との連携機能</span></a>
+            </li>
+            <li class="pageLink__item">
+              <a href="/_orphans/" class="pageLink__anchor"><span>JavaScript組み込み機能</span></a>
+            </li>
+            <li class="pageLink__item">
+              <a href="/_orphans/" class="pageLink__anchor"><span>他システムと連携するための外部API実行部品</span></a>
+            </li>
+            <li class="pageLink__item">
+              <a href="/_orphans/" class="pageLink__anchor">
+                <span>
+                  他システムからイットbuilderデータベースに
+                  <br />
+                  アクセスするAPIの提供
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="wae-section wae-section-margin-large">
+        <div class="wae-section-base-width">
+          <div class="wae-section-column wae-section-column2 wae-section-margin-small">
+            <div class="wae-section-block wae-section-block-background">
+              <div class="wae-section-head wae-section-margin-small wae-h-border wae-h-bold wae-txt-normal">
+                <h2>
+                  <span id="pageLink01" class="link-position"></span>
+                  条件による分岐機能部品
+                </h2>
+              </div>
+              <figure class="wae-section-margin-small">
+                <img decoding="async" src="/it-builder/wp-content/uploads/2018/10/advanced_img_01-1.jpg" />
+              </figure>
+              <p class="wae-section-margin-small">
+                イットbuilderには、条件分岐機能部品があります。
+                <br />
+                この機能を使えば、条件による処理の分岐を設定できます。
+                <br />
+                たとえば、ログイン者の役職によりデータの開示範囲を変更したり、入力されたデータの値により画面展開先を制御するなどが可能です。
+              </p>
+            </div>
+            <div class="wae-section-block wae-section-block-background">
+              <div class="wae-section-head wae-section-margin-small wae-h-border wae-h-bold wae-txt-normal">
+                <h2>
+                  <span id="pageLink02" class="link-position"></span>
+                  自動入力機能
+                </h2>
+              </div>
+              <figure class="wae-section-margin-small">
+                <img decoding="async" src="/it-builder/wp-content/uploads/2018/10/advanced_img_02-1.jpg" />
+              </figure>
+              <p class="wae-section-margin-small">
+                イットbuilderには、自動入力機能があります。
+                <br />
+                自動入力とは、他のイットbuilderデータベースのデータを取得し、入力項目初期値として表示する機能です。
+                <br />
+                たとえば、営業の案件を管理するアプリに、商品マスタのデータを取得する設定をすれば、商品名を選択することで型番、定価などの情報を自動入力することができます。
+              </p>
+            </div>
+          </div>
+          <div class="wae-section-column wae-section-column2 wae-section-margin-small">
+            <div class="wae-section-block wae-section-block-background">
+              <div class="wae-section-head wae-section-margin-small wae-h-border wae-h-bold wae-txt-normal">
+                <h2>
+                  <span id="pageLink03" class="link-position"></span>
+                  1対N形式データ表示機能
+                </h2>
+              </div>
+              <figure class="wae-section-margin-small">
+                <img decoding="async" src="/it-builder/wp-content/uploads/2018/10/advanced_img_03-1.jpg" />
+              </figure>
+              <p class="wae-section-margin-small">
+                イットbuilderは、1対N形式データ表示に対応しています。
+                <br />
+                1対N形式データ表示とは、1画面に1つのデータベースのデータだけでなく、複数のデータベースのデータを表示することです。
+                <br />
+                たとえば、従業員台帳アプリで従業員の氏名、入社年月日などの従業員マスタの情報（1件）と同時に、その従業員が保有する複数（N件）の資格情報を表示するなどが可能です。
+              </p>
+            </div>
+            <div class="wae-section-block wae-section-block-background">
+              <div class="wae-section-head wae-section-margin-small wae-h-border wae-h-bold wae-txt-normal">
+                <h2>
+                  <span id="pageLink04" class="link-position"></span>
+                  PDF出力機能
+                </h2>
+              </div>
+              <figure class="wae-section-margin-small">
+                <img decoding="async" src="/it-builder/wp-content/uploads/2018/10/advanced_img_04-1.jpg" />
+              </figure>
+              <p class="wae-section-margin-small">
+                イットbuilderでは、PDF帳票の出力が可能です。
+                <br />
+                一覧表、1レコードの単票、1対N形式データのPDF帳票を作成できます。
+                <br />
+                帳票のレイアウトは、オープンソースの帳票作成ツールであるJasperReportsで作成します。
+                <br class="pcShow" />
+                <br class="pcShow" />
+                <br class="pcShow" />
+              </p>
+            </div>
+          </div>
+          <div class="wae-section-column wae-section-column2 wae-section-margin-small">
+            <div class="wae-section-block wae-section-block-background">
+              <div class="wae-section-head wae-section-margin-small wae-h-border wae-h-bold wae-txt-normal">
+                <h2>
+                  <span id="pageLink05" class="link-position"></span>
+                  Excel出力機能
+                </h2>
+              </div>
+              <figure class="wae-section-margin-small">
+                <img decoding="async" src="/it-builder/wp-content/uploads/2018/10/advanced_img_05-1.jpg" />
+              </figure>
+              <p class="wae-section-margin-small">
+                イットbuilderでは、あらかじめ作成しておいたExcel表に、イットbuilderのデータをはめこんで出力することができます。
+                <br />
+                この機能を利用すれば、Excelファイルとしてのデータ活用の可能性が広がるほか、一覧表、単票や1対N形式の見積書など、さまざまな帳票を簡単に作成することもできます。
+              </p>
+            </div>
+            <div class="wae-section-block wae-section-block-background">
+              <div class="wae-section-head wae-section-margin-small wae-h-border wae-h-bold wae-txt-normal">
+                <h2>
+                  <span id="pageLink06" class="link-position"></span>
+                  CSV出力機能
+                </h2>
+              </div>
+              <figure class="wae-section-margin-small">
+                <img decoding="async" src="/it-builder/wp-content/uploads/2018/10/advanced_img_06-1.jpg" />
+              </figure>
+              <p class="wae-section-margin-small">
+                イットbuilderでは、CSV出力が可能です。
+                <br />
+                指定した検索条件で対象データを抽出することができます。
+                <br />
+                ソート順、対象項目、項目の並びを指定して出力することもできます。
+                <br class="pcShow" />
+                <br class="pcShow" />
+                <br class="pcShow" />
+              </p>
+            </div>
+          </div>
+          <div class="wae-section-column wae-section-column2 wae-section-margin-small">
+            <div class="wae-section-block wae-section-block-background">
+              <div class="wae-section-head wae-section-margin-small wae-h-border wae-h-bold wae-txt-normal">
+                <h2>
+                  <span id="pageLink-data" class="link-position"></span>
+                  表形式データ編集機能
+                </h2>
+              </div>
+              <figure class="wae-section-margin-small">
+                <img decoding="async" src="/it-builder/wp-content/uploads/2018/10/advanced_img_07-1.jpg" />
+              </figure>
+              <p class="wae-section-margin-small">
+                イットbuilderでは、単票形式による1件ずつのデータ編集だけでなく、表形式で複数件のデータを一括して編集することが可能です。
+                <br />
+                この機能を利用すれば、一覧性が高まり、関連するデータの内容を確認しながら編集を行うことができるため、編集効率の向上はもとより、データ精度と整合性を高めることができます。
+              </p>
+            </div>
+            <div class="wae-section-block wae-section-block-background">
+              <div class="wae-section-head wae-section-margin-small wae-h-border wae-h-bold wae-txt-normal">
+                <h2>
+                  <span id="pageLink07" class="link-position"></span>
+                  バッチアプリ作成機能
+                </h2>
+              </div>
+              <figure class="wae-section-margin-small">
+                <img decoding="async" src="/it-builder/wp-content/uploads/2018/10/advanced_img_08-1.jpg" />
+              </figure>
+              <p class="wae-section-margin-small">
+                イットbuilderでは、ブラウザで利用するWebアプリだけでなく、バッチアプリの作成が可能です。
+                <br />
+                これにより、基幹システムから出力されたCSVデータをイットbuilderデータベースへ取り込んだり、外部システムへ連携するCSVを出力することができます。
+              </p>
+            </div>
+          </div>
+          <div class="wae-section-column wae-section-column2 wae-section-margin-small">
+            <div class="wae-section-block wae-section-block-background">
+              <div class="wae-section-head wae-section-margin-small wae-h-border wae-h-bold wae-txt-normal">
+                <h2>
+                  <span id="pageLink-doc" class="link-position"></span>
+                  ドキュメント作成機能
+                </h2>
+              </div>
+              <figure class="wae-section-margin-small">
+                <img decoding="async" src="/it-builder/wp-content/uploads/2018/10/advanced_img_09-1.jpg" />
+              </figure>
+              <p class="wae-section-margin-small">
+                イットbuilderでは、ボタンをクリックするだけで、アプリの概要説明、利用データベース、処理内容、画面ほか各部品の関連などをわかりやすく示した情報を表示することができます。
+                <br />
+                この情報を印刷すれば、アプリの仕様書として利用することもできるため、企業の業務アプリの場合には特に、メンテナンス時に必要となるドキュメント（関係文書）として威力を発揮します。
+              </p>
+            </div>
+            <div class="wae-section-block wae-section-block-background">
+              <div class="wae-section-head wae-section-margin-small wae-h-border wae-h-bold wae-txt-normal">
+                <h2>
+                  <span id="pageLink08" class="link-position"></span>
+                  複数ユーザーマスター作成機能
+                </h2>
+              </div>
+              <figure class="wae-section-margin-small">
+                <img decoding="async" src="/it-builder/wp-content/uploads/2018/10/advanced_img_10-1.jpg" />
+              </figure>
+              <p class="wae-section-margin-small">
+                イットbuilderでは、複数のユーザーマスターを作成可能です。
+                <br />
+                たとえば、従業員用、顧客用、関連企業用など、用途ごとに専用のユーザーマスターを作成することができます。
+                <br class="pcShow" />
+                <br class="pcShow" />
+              </p>
+            </div>
+          </div>
+          <div class="wae-section-column wae-section-column2 wae-section-margin-small">
+            <div class="wae-section-block wae-section-block-background">
+              <div class="wae-section-head wae-section-margin-small wae-h-border wae-h-bold wae-txt-normal">
+                <h2>
+                  <span id="pageLink09" class="link-position"></span>
+                  認証基盤との連携機能
+                </h2>
+              </div>
+              <figure class="wae-section-margin-small">
+                <img decoding="async" src="/it-builder/wp-content/uploads/2018/10/advanced_img_11-1.jpg" />
+              </figure>
+              <p class="wae-section-margin-small">
+                イットbuilderでは、認証基盤との連携が可能です。
+                <br />
+                お客さまの既存認証基盤と連携することで、複数のID/パスワードを使い分けることなくイットbuilderを利用できます。
+                <br />
+                また、ADFS（Active Directoryフェデレーションサービス）対応により、シングルサインオンでイットbuilderへのアクセスも可能です。
+              </p>
+            </div>
+            <div class="wae-section-block wae-section-block-background">
+              <div class="wae-section-head wae-section-margin-small wae-h-border wae-h-bold wae-txt-normal">
+                <h2>
+                  <span id="pageLink10" class="link-position"></span>
+                  JavaScript組み込み機能
+                </h2>
+              </div>
+              <figure class="wae-section-margin-small">
+                <img decoding="async" src="/it-builder/wp-content/uploads/2018/10/advanced_img_12-1.jpg" />
+              </figure>
+              <p class="wae-section-margin-small">
+                JavaScriptを使って標準機能では実現できない高度なカスタマイズが可能です。
+                <br />
+                たとえば、アンケートアプリで学生を選択した場合には学校名を、社会人を選択した場合には会社名の入力項目を、表示するなどの制御ができます。
+                <br class="pcShow" />
+                <br class="pcShow" />
+              </p>
+            </div>
+          </div>
+          <div class="wae-section-column wae-section-column2 wae-section-margin-small">
+            <div class="wae-section-block wae-section-block-background">
+              <div class="wae-section-head wae-section-margin-small wae-h-border wae-h-bold wae-txt-normal">
+                <h2>
+                  <span id="pageLink11" class="link-position"></span>
+                  他システムと連携するための
+                  <br class="pcShow" />
+                  外部API実行部品
+                </h2>
+              </div>
+              <figure class="wae-section-margin-small">
+                <img decoding="async" src="/it-builder/wp-content/uploads/2018/10/advanced_img_13-1.jpg" />
+              </figure>
+              <p class="wae-section-margin-small">
+                外部API実行部品を使うと、他システムが提供するAPI（オンライン上で利用できるアプリケーション）を利用できます。
+                <br />
+                現在、Google、Yahoo、Amazon、ぐるなび、楽天、Facebook、Twitter他、有名WEBサービスが独自のAPIを公開しています。
+                <br />
+                たとえば、書籍コードを指定してAmazonのAPIを呼び出すことで、書籍名、出版社、価格、ページ数などの情報を取得することができます。
+              </p>
+            </div>
+            <div class="wae-section-block wae-section-block-background">
+              <div class="wae-section-head wae-section-margin-small wae-h-border wae-h-bold wae-txt-normal">
+                <h2>
+                  <span id="pageLink12" class="link-position"></span>
+                  他システムから
+                  <br class="pcShow" />
+                  イットbuilderデータベースに
+                  <br class="pcShow" />
+                  アクセスするAPIの提供
+                </h2>
+              </div>
+              <figure class="wae-section-margin-small">
+                <img decoding="async" src="/it-builder/wp-content/uploads/2018/10/advanced_img_14-1.jpg" />
+              </figure>
+              <p class="wae-section-margin-small">
+                イットbuilderデータベースへ他システムからアクセスできるAPIを提供しています。「外部API実行部品」とは逆の概念となる機能です。
+                <br />
+                イットbuilderデータベースに対する登録、参照、更新、削除が可能です。
+                <br class="pcShow" />
+                <br class="pcShow" />
+                <br class="pcShow" />
+                <br class="pcShow" />
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="wae-section-html wae-section-margin-moderate">
+        <div class="inner">
+          <ul class="aboutSmallNav">
+            <li class="aboutSmallNav__item">
+              <a href="/it-builder/about/" class="aboutSmallNav__anchor">イットbuilderとは</a>
+            </li>
+            <li class="aboutSmallNav__item">
+              <a href="/it-builder/about/reason/" class="aboutSmallNav__anchor">イットbuilderが選ばれる理由</a>
+            </li>
+            <li class="aboutSmallNav__item">
+              <a href="/it-builder/about/how_to_make/" class="aboutSmallNav__anchor">イットbuilderアプリ3つの作り方</a>
+            </li>
+          </ul>
+          <ul class="aboutSmallNav">
+            <li class="aboutSmallNav__item">
+              <a href="/it-builder/about/requirements/" class="aboutSmallNav__anchor--support">稼働環境</a>
+            </li>
+            <li class="aboutSmallNav__item">
+              <a href="/it-builder/about/parts/" class="aboutSmallNav__anchor--support">ご提供するアプリ部品</a>
+            </li>
+            <li class="aboutSmallNav__item">
+              <a href="/it-builder/about/data/" class="aboutSmallNav__anchor--support">サポートするデータの種類</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <div data-include="footer"></div>
+
+    <script src="/it-builder/assets/js/include-loader.js" defer></script>
+
+    <script src="/it-builder/wp-content/themes/itbuilder-theme/resource/js/lib/jquery.js"></script>
+    <script src="/it-builder/wp-content/themes/itbuilder-theme/resource/js/lib/slick.min.js"></script>
+    <script src="/it-builder/wp-content/themes/itbuilder-theme/resource/js/lib/jquery.matchHeight.js"></script>
+    <script src="/it-builder/wp-content/themes/itbuilder-theme/resource/js/common.js"></script>
+    <script type="text/javascript" src="/it-builder/wp-content/plugins/lw-wae-contents-editor/js/wae-section.js%3Fver=1.1" id="wae_front_script-js"></script>
+    <script type="text/javascript" src="/it-builder/wp-content/plugins/lw-wae-contents-editor/js/library.js%3Fver=1.1" id="wae_library_script-js"></script>
+    <div data-include="sprite"></div>
+  </body>
+</html>

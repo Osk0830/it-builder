@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D733JDSWR7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-D733JDSWR7');
+    </script>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>ご利用中のお客さまへ &#8211; イットbuilder</title>
+    <meta name="robots" content="max-image-preview:large" />
+
+    <link rel="stylesheet" href="/it-builder/wp-includes/css/dist/block-library/style.min.css%3Fver=6.1.7.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="/it-builder/wp-includes/css/classic-themes.min.css%3Fver=1.css" type="text/css" media="all" />
+    <link rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" id="slick_style-css" href="/it-builder/wp-content/plugins/lw-wae-contents-editor/aos/slick.css%3Fver=6.1.7.css" type="text/css" media="all" />
+    <script type="text/javascript"></script>
+    <link rel="alternate" type="application/json" href="/it-builder/wp-json/wp/v2/pages/9" />
+    <link type="application/rsd+xml" title="RSD" href="/it-builder/xmlrpc.php%3Frsd" />
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" />
+    <!-- FIXME: canonical removed: <link rel="canonical" href="/_orphans/" /> -->
+    <link rel="alternate" />
+    <link rel="alternate" />
+    <meta name="description" content="イットbuilderは業務のお悩みを軽快かつスピーディに改善できるWeb業務アプリ作成ツールです。標準部品を組み合わせるだけで、日頃のお困りごとを解決する業務アプリを自分たちの手で簡単に作成できます。" />
+    <script src="/it-builder/wp-content/themes/itbuilder-theme/resource/js/viewport.js"></script>
+    <link rel="icon" href="/it-builder/wp-content/themes/itbuilder-theme/resource/sns/favicon.ico" />
+    <link rel="shortcut icon" href="/it-builder/wp-content/themes/itbuilder-theme/resource/sns/favicon.ico" />
+    <link rel="apple-touch-icon" href="https://www.it-builder.jp/apple-touch-icon.png" />
+    <link rel="stylesheet" href="/it-builder/wp-content/themes/itbuilder-theme/resource/css/common.css%3F=1.2.2.css" />
+    <link rel="stylesheet" media="print" href="/it-builder/wp-content/themes/itbuilder-theme/resource/css/print.css%3Fvar=0.1.css" />
+  </head>
+  <body data-rsssl="1">
+    <div data-include="header"></div>
+    <div class="pageVisual" style="background-image: url(../wp-content/uploads/2018/07/user_visual_bg.jpg)">
+      <p class="pageVisual__en">
+        <img src="/it-builder/wp-content/uploads/2018/07/title_user_white.png" alt="ご利用中のお客さまへ" />
+      </p>
+      <h1 class="pageVisual__title">ご利用中のお客さまへ</h1>
+    </div>
+    <a href="https://info.it-builder.jp/app/portal/support" class="loginBtn l-visualLogin" target="_blank">
+      <span class="loginBtn__small">
+        ご利用者さま専用
+        <br class="pcShow" />
+        サポートサイト
+      </span>
+      ログイン
+    </a>
+
+    <ul class="sectionNav js-sectionNav">
+      <li class="sectionNav__item">
+        <a href="/_orphans/" class="sectionNav__anchor is-active">
+          <span class="sectionNav__text">
+            <span class="sectionNav__text__num">01</span>
+            不明点を解決する
+          </span>
+        </a>
+      </li>
+      <li class="sectionNav__item">
+        <a href="/_orphans/" class="sectionNav__anchor--anders">
+          <span class="sectionNav__text">
+            <span class="sectionNav__text__num">02</span>
+            活用の幅を広げる
+          </span>
+        </a>
+      </li>
+    </ul>
+    <p class="pageLead">
+      ご利用中に活用いただけるサポートサービスやお問い合わせ窓口のご紹介など、
+      <br class="pcShow" />
+      ご利用中の方に便利な情報をご紹介します。
+    </p>
+    <section id="a-user01" class="l-row userHelp01">
+      <div class="inner">
+        <div class="sectionTitle">
+          <span class="sectionTitle__ribbon">
+            <span class="sectionTitle__ribbon__text">HELP</span>
+            <span class="sectionTitle__ribbon__num">01</span>
+          </span>
+          <p class="sectionTitle__text">
+            <img decoding="async" src="/it-builder/wp-content/themes/itbuilder-theme/resource/img/title_user_help01.png" alt="サポートサービスも充実" />
+          </p>
+          <h2 class="sectionTitle__main">不明点を解決する</h2>
+        </div>
+        <div class="menuInfo">
+          <div class="menuInfo__sumally">
+            <p class="menuInfo__text">ご利用中のお客さまからイットbuilderサポート窓口に寄せられたご質問の中から、よくあるお問い合わせをご紹介します。</p>
+            <p class="menuInfo__text">その他、利用方法をご紹介したマニュアルや、サポートサービスも充実。</p>
+            <p class="menuInfo__text">イットbuilderのご不明点を解決したい際には、まずこちらをご覧ください。また、専用フォームでお問い合わせを受け付けています。</p>
+          </div>
+          <div class="menuInfo__link">
+            <ul class="btnList">
+              <li class="btnList__item">
+                <a href="/it-builder/user/download/" class="btnList__anchor">
+                  資料ダウンロード
+                  <svg class="u-ico btnList__anchor__icon">
+                    <use xlink:href="#a-icoArrow"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+            <a href="https://info.it-builder.jp/app/portal/support" class="loginBtn" target="_blank">
+              <span class="loginBtn__small">
+                ご利用者さま専用
+                <br class="pcShow" />
+                サポートサイト
+              </span>
+              ログイン
+            </a>
+          </div>
+        </div>
+        <section>
+          <h3 class="blockTitle">ご利用時のよくある質問TOP3</h3>
+          <ul class="faqAccordion">
+            <li class="faqAccordion__item function_8">
+              <div class="faqAccordion__question js-faqAccordion">
+                <span class="faqAccordion__question__icon"><img src="/it-builder/wp-content/themes/itbuilder-theme/resource/img/rank_num01.svg" alt="1位" /></span>
+                <p class="faqAccordion__question__title">IPアドレスによるログイン制限</p>
+                <p class="faqAccordion__question__text">使用するパソコンのIPアドレスによって、ログイン制限することはできますか？</p>
+              </div>
+              <div class="faqAccordion__answer">
+                <span class="faqAccordion__answer__icon"><img src="/it-builder/wp-content/themes/itbuilder-theme/resource/img/faqlist_ic_answer.svg" alt="answer" /></span>
+                <p class="faqAccordion__answer__text">
+                  イットbuilderでは、特定のIPアドレス以外の端末はイットbuilderにアクセス（ログイン）できないよう、アプリごとに制限することができます。
+                  <br />
+                  この機能を利用すれば、アンケートアプリは社外の不特定多数の方も使用できるようにし、社員だけが使用するアプリはIPアドレス制限で社外第三者の使用をブロックする、などの制御が可能です。
+                </p>
+              </div>
+            </li>
+            <li class="faqAccordion__item function_13">
+              <div class="faqAccordion__question js-faqAccordion">
+                <span class="faqAccordion__question__icon"><img src="/it-builder/wp-content/themes/itbuilder-theme/resource/img/rank_num02.svg" alt="2位" /></span>
+                <p class="faqAccordion__question__title">プルダウン項目の絞り込み</p>
+                <p class="faqAccordion__question__text">択一選択プルダウンで、選択候補が多い場合にマウス操作で対象のものを探すのが面倒なのですが、何かよい方法はありませんか？</p>
+              </div>
+              <div class="faqAccordion__answer">
+                <span class="faqAccordion__answer__icon"><img src="/it-builder/wp-content/themes/itbuilder-theme/resource/img/faqlist_ic_answer.svg" alt="answer" /></span>
+                <p class="faqAccordion__answer__text">
+                  択一選択プルダウンには、検索オプションがあります。
+                  <br />
+                  これを利用することで、選択対象の文字列の一部を指定し、選択候補を絞り込むことができます。
+                </p>
+              </div>
+            </li>
+            <li class="faqAccordion__item function_4 function_7">
+              <div class="faqAccordion__question js-faqAccordion">
+                <span class="faqAccordion__question__icon"><img src="/it-builder/wp-content/themes/itbuilder-theme/resource/img/rank_num03.svg" alt="3位" /></span>
+                <p class="faqAccordion__question__title">複数データベースの1画面表示</p>
+                <p class="faqAccordion__question__text">複数のデータベースの情報を1画面に表示できますか？</p>
+              </div>
+              <div class="faqAccordion__answer">
+                <span class="faqAccordion__answer__icon"><img src="/it-builder/wp-content/themes/itbuilder-theme/resource/img/faqlist_ic_answer.svg" alt="answer" /></span>
+                <p class="faqAccordion__answer__text">
+                  イットbuilderでは「1対N形式データ表示」が可能です。
+                  <br />
+                  通常、1画面には1つのデータベースのデータを表示するのに対し、「1対N形式データ表示」では、あるデータベースの1件のデータとともに、これに関連する他のデータベースの複数件（N件）のデータを1画面に表示するものです。
+                  <br />
+                  たとえば、従業員台帳アプリにおいて、ある従業員の氏名、入社年月日などの従業員マスタの情報（1件）とともに、この従業員が保有する複数（N件）の資格情報を資格マスタから抽出して1画面に表示するなどのアプリを作成することができます。
+                </p>
+              </div>
+            </li>
+          </ul>
+          <p class="detailBtn">
+            <a href="/it-builder/faq/index.html" class="detailBtn__anchor">
+              その他のよくある質問を見る
+              <svg class="u-ico detailBtn__icon">
+                <use xlink:href="#a-icoArrow"></use>
+              </svg>
+            </a>
+          </p>
+        </section>
+      </div>
+    </section>
+    <section id="a-user02" class="l-row userHelp02">
+      <div class="inner">
+        <div class="sectionTitle--anders">
+          <span class="sectionTitle__ribbon">
+            <span class="sectionTitle__ribbon__text">HELP</span>
+            <span class="sectionTitle__ribbon__num">02</span>
+          </span>
+          <p class="sectionTitle__text">
+            <img decoding="async" src="/it-builder/wp-content/themes/itbuilder-theme/resource/img/title_user_help02.png" alt="もっと活用しよう" />
+          </p>
+          <h2 class="sectionTitle__main">活用の幅を広げる</h2>
+        </div>
+        <div class="menuInfo">
+          <div class="menuInfo__sumally">
+            <p class="menuInfo__text">イットbuilderをもっと活用したい方は、ぜひ豊富な活用例と他社の導入実績をご覧ください。きっとヒントが見つかるはずです。</p>
+            <p class="menuInfo__text">また、イットbuilderの使い方をレクチャーする出張研修や、お客さまのご要望に合わせたアプリ作成代行などのオプションプランもございます。</p>
+            <p class="menuInfo__text">使い方がわからない、アプリ作成の時間が取れないといったケースでぜひご活用ください。</p>
+          </div>
+          <div class="menuInfo__link">
+            <ul class="btnList--anders">
+              <li class="btnList__item">
+                <a href="/it-builder/about/how_to_make/" class="btnList__anchor">
+                  イットbuilderアプリ3つの作り方
+                  <svg class="u-ico btnList__anchor__icon">
+                    <use xlink:href="#a-icoArrow"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="btnList__item">
+                <a href="/it-builder/case/" class="btnList__anchor">
+                  活用例
+                  <svg class="u-ico btnList__anchor__icon">
+                    <use xlink:href="#a-icoArrow"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="btnList__item">
+                <a href="/it-builder/case/" class="btnList__anchor">
+                  導入実績
+                  <svg class="u-ico btnList__anchor__icon">
+                    <use xlink:href="#a-icoArrow"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="btnList__item">
+                <a href="/_orphans/" class="btnList__anchor">
+                  オプションプラン
+                  <svg class="u-ico btnList__anchor__icon">
+                    <use xlink:href="#a-icoArrow"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="l-row news">
+      <div class="inner">
+        <div class="newsBox">
+          <div class="newsBox__head">
+            <h2 class="newsBox__title">
+              <img decoding="async" src="/it-builder/wp-content/themes/itbuilder-theme/resource/img/title_news.png" alt="NEWS" />
+              <span class="newsBox__title__small">最新のお知らせ</span>
+            </h2>
+          </div>
+          <ul class="newsList">
+            <li class="newsList__item">
+              <a href="/it-builder/news/news0004327/index.html" class="newsList__anchor">
+                <span class="newsList__date">2024.06.03</span>
+                <span class="newsList__tag">アップデート</span>
+                <span class="newsList__text">イットbuilder 2024年6月 バージョンアップのお知らせ</span>
+                <svg class="u-ico newsList__icon">
+                  <use xlink:href="#a-icoArrow"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="newsList__item">
+              <a href="/it-builder/news/news0004266/index.html" class="newsList__anchor">
+                <span class="newsList__date">2023.04.25</span>
+                <span class="newsList__tag">アップデート</span>
+                <span class="newsList__text">イットbuilder 2023年4月 バージョンアップのお知らせ</span>
+                <svg class="u-ico newsList__icon">
+                  <use xlink:href="#a-icoArrow"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="newsList__item">
+              <a href="/it-builder/news/news0004203/index.html" class="newsList__anchor">
+                <span class="newsList__date">2022.08.02</span>
+                <span class="newsList__tag">メンテナンス</span>
+                <span class="newsList__text">本ページの一部機能が停止します。（2022年8月3日（水）18時～19時）</span>
+                <svg class="u-ico newsList__icon">
+                  <use xlink:href="#a-icoArrow"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <p class="detailBtn">
+          <a href="/it-builder/news/index.html" class="detailBtn__anchor">
+            お知らせ一覧
+            <svg class="u-ico detailBtn__icon">
+              <use xlink:href="#a-icoArrow"></use>
+            </svg>
+          </a>
+        </p>
+      </div>
+    </section>
+    <div data-include="footer"></div>
+
+    <script src="/it-builder/assets/js/include-loader.js" defer></script>
+
+    <script src="/it-builder/wp-content/themes/itbuilder-theme/resource/js/lib/jquery.js"></script>
+    <script src="/it-builder/wp-content/themes/itbuilder-theme/resource/js/lib/slick.min.js"></script>
+    <script src="/it-builder/wp-content/themes/itbuilder-theme/resource/js/lib/jquery.matchHeight.js"></script>
+    <script src="/it-builder/wp-content/themes/itbuilder-theme/resource/js/common.js"></script>
+    <script type="text/javascript" src="/it-builder/wp-content/plugins/lw-wae-contents-editor/js/wae-section.js%3Fver=1.1" id="wae_front_script-js"></script>
+    <script type="text/javascript" src="/it-builder/wp-content/plugins/lw-wae-contents-editor/js/library.js%3Fver=1.1" id="wae_library_script-js"></script>
+    <div data-include="sprite"></div>
+  </body>
+</html>

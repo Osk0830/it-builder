@@ -1,0 +1,149 @@
+<header id="header" class="header">
+  <div class="header__inner">
+    <p class="header__logo">
+      <a href="/it-builder/" class="header__logo__itbuilder"><img src="/it-builder/wp-content/themes/itbuilder-theme/resource/img/header_logo.png" alt="イットbuilder" /></a>
+      <a href="http://www.cti.co.jp" target="_blank" class="header__logo__cti"><img src="/it-builder/wp-content/themes/itbuilder-theme/resource/img/header_logo_cti.png" alt="中電シーティーアイ" /></a>
+    </p>
+    <ul class="customerMenu">
+      <li class="customerMenu__item">
+        <a href="/_orphans/" class="customerMenu__anchor">
+          <svg class="u-ico customerMenu__anchor__icon">
+            <use xlink:href="#a-icoSupport"></use>
+          </svg>
+          ご検討中のお客さま
+        </a>
+      </li>
+      <li class="customerMenu__item">
+        <a href="/_orphans/" class="customerMenu__anchor">
+          <svg class="u-ico customerMenu__anchor__icon">
+            <use xlink:href="#a-icoSupport"></use>
+          </svg>
+          ご利用中のお客さま
+        </a>
+      </li>
+    </ul>
+    <a href="https://info.it-builder.jp/app/inquiry/180days_trial" target="_blank" class="trialBtn">
+      <span class="trialBtn__day">180日間</span>
+      無料トライアル
+    </a>
+    <ul class="spMenuBtn">
+      <li class="spMenuBtn__item">
+        <a href="https://info.it-builder.jp/app/inquiry/180days_trial" class="spMenuBtn__anchor--trial" target="_blank"><img src="/it-builder/wp-content/themes/itbuilder-theme/resource/img/sp_header_btn_trial.png" alt="TRIAL" /></a>
+      </li>
+      <li class="spMenuBtn__item">
+        <a href="index.html#" class="spMenuBtn__anchor--menu js-menuBtn"><img src="/it-builder/wp-content/themes/itbuilder-theme/resource/img/sp_header_btn_menu.png" alt="MENU" /></a>
+      </li>
+    </ul>
+  </div>
+  <button type="button" class="header__menuBtn js-menuBtn">
+    <img src="/it-builder/wp-content/themes/itbuilder-theme/resource/img/header_btn_menu.png" alt="MENU" />
+  </button>
+  <nav class="gnav">
+    <p class="gnav__title">
+      <img src="/it-builder/wp-content/themes/itbuilder-theme/resource/img/gnav_title.png" alt="MENU" />
+    </p>
+    <ul class="spCustomerMenu">
+      <li class="spCustomerMenu__item">
+        <a href="/_orphans/" class="spCustomerMenu__anchor">
+          <svg class="u-ico spCustomerMenu__anchor__icon">
+            <use xlink:href="#a-icoCustomer"></use>
+          </svg>
+          <span class="spCustomerMenu__text">ご検討中</span>
+          のお客さま
+          <svg class="u-ico spCustomerMenu__anchor__arrow">
+            <use xlink:href="#a-icoArrow"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="spCustomerMenu__item">
+        <a href="/_orphans/" class="spCustomerMenu__anchor">
+          <svg class="u-ico spCustomerMenu__anchor__icon">
+            <use xlink:href="#a-icoCustomer"></use>
+          </svg>
+          <span class="spCustomerMenu__text">ご利用中</span>
+          のお客さま
+          <svg class="u-ico spCustomerMenu__anchor__arrow">
+            <use xlink:href="#a-icoArrow"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
+    <ul class="gnavList">
+      <li class="gnavList__item">
+        <a href="/_orphans/" class="gnavList__anchor--about">
+          <svg class="u-ico gnavList__anchor__icon">
+            <use xlink:href="#a-icoAbout"></use>
+          </svg>
+          イットbuilderとは
+        </a>
+      </li>
+      <li class="gnavList__item">
+        <a href="/_orphans/" class="gnavList__anchor--cost">
+          <svg class="u-ico gnavList__anchor__icon">
+            <use xlink:href="#a-icoCost"></use>
+          </svg>
+          料金案内
+        </a>
+      </li>
+      <li class="gnavList__item">
+        <a href="/_orphans/" class="gnavList__anchor--case">
+          <svg class="u-ico gnavList__anchor__icon">
+            <use xlink:href="#a-icoCase"></use>
+          </svg>
+          活用例
+        </a>
+      </li>
+      <li class="gnavList__item">
+        <a href="https://info.it-builder.jp/app/inquiry/otoiawase" target="_blank" rel="noopener noreferrer" class="gnavList__anchor--consultation">
+          <svg class="u-ico gnavList__anchor__icon">
+            <use xlink:href="#a-icoConsultation"></use>
+          </svg>
+          ご相談
+        </a>
+      </li>
+      <li class="gnavList__item">
+        <a href="/_orphans/" class="gnavList__anchor--installation">
+          <svg class="u-ico gnavList__anchor__icon">
+            <use xlink:href="#a-icoInstallation"></use>
+          </svg>
+          導入実績
+        </a>
+      </li>
+      <li class="gnavList__item">
+        <a href="/it-builder/user/faq/index.html" class="gnavList__anchor--support">
+          <svg class="u-ico gnavList__anchor__icon">
+            <use xlink:href="#a-icoSupport"></use>
+          </svg>
+          よくある質問
+        </a>
+      </li>
+    </ul>
+    <ul class="subNav">
+      <li class="subNav__item">
+        <a href="/it-builder/news/index.html" class="subNav__anchor">NEWS</a>
+      </li>
+      <li class="subNav__item">
+        <a href="/_orphans/" class="subNav__anchor">サイトマップ</a>
+      </li>
+      <li class="subNav__item">
+        <a href="http://www.cti.co.jp/company/about/personal/" target="_blank" class="subNav__anchor">個人情報のお取り扱い</a>
+      </li>
+      <li class="subNav__item">
+        <a href="/_orphans/" class="subNav__anchor">サイトポリシー</a>
+      </li>
+    </ul>
+    <div class="gnav__bottom">
+      <a href="https://info.it-builder.jp/app/inquiry/180days_trial" target="_blank" class="trialBtn">
+        <span class="trialBtn__day">180日間</span>
+        無料トライアル
+        <svg class="u-ico trialBtn__icon">
+          <use xlink:href="#a-icoArrow"></use>
+        </svg>
+      </a>
+      <!-- <dl class="gnavTel">
+                <dt class="gnavTel__title"><span class="pcShow"><svg class="u-ico gnavTel__title__icon"><use xlink:href="#a-icoTel"></use></svg>お電話のご相談<br>お問い合わせ</span><span class="spShow">お電話のご相談・お問い合わせ</span></dt>
+                <dd class="gnavTel__info"><span class="gnavTel__place">名古屋</span><svg class="u-ico gnavTel__info__icon spShow"><use xlink:href="#a-icoTel"></use></svg><a href="tel:0520000000" class="gnavTel__num">052<span class="gnavTel__num__hyphen">-</span>000<span class="gnavTel__num__hyphen">-</span>0000</a><span class="gnavTel__time">月～金曜日 9:00～17:00（祝日、12/29～1/3を除く）</span></dd>
+            </dl> -->
+    </div>
+  </nav>
+</header>
