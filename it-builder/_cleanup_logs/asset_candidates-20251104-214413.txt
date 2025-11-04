@@ -1,0 +1,11 @@
+it-builder/xmlrpc.php
+it-builder/wp-includes/css/dist/block-library/style.min.css
+it-builder/wp-includes/css/classic-themes.min.css
+it-builder/wp-content/plugins/lw-wae-contents-editor/js/library.js
+it-builder/wp-content/plugins/lw-wae-contents-editor/js/wae-section.js
+it-builder/wp-content/plugins/lw-wae-contents-editor/aos/aos.css
+it-builder/wp-content/plugins/lw-wae-contents-editor/aos/slick.css
+it-builder/wp-content/plugins/lw-wae-contents-editor/aos/aos.js
+it-builder/wp-content/themes/itbuilder-theme/resource/css/print.css
+it-builder/wp-content/themes/itbuilder-theme/resource/css/top.css
+it-builder/wp-content/themes/itbuilder-theme/resource/css/common.css
