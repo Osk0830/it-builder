@@ -1,41 +1,23 @@
-//variables
+// /wp-content/themes/itbuilder-theme/resource/js/common.js
+// ※ 既存ファイルをこの内容で置き換え
+
+// =====================================
+// 共通設定
+// =====================================
 var tabWidth = 768;
 
-//リサイズ
-$(window).on('load resize', function () {
-  if ($(window).width() <= tabWidth) {
-    //スマホ
-    //検索ボックス
-    $('.js-searchTab:not(:first)').each(function () {
-      $($(this).attr('href')).hide();
-    });
-    $('.js-searchTab:first').addClass('is-active');
-
-    //アコーディオン
-    $('.js-accordionBoxInner').hide();
-  } else {
-    //検索ボックス
-    $('.js-searchTab').each(function () {
-      $($(this).attr('href')).show();
-    });
-    $('.js-searchTab').removeClass('is-active');
-
-    //アコーディオン
-    $('.js-accordionBoxInner').show();
-  }
-
-  //メニュー
-  gnavClose();
-});
-
+// =====================================
+// メニュー開閉（そのまま利用：外部からも呼べる）
+// =====================================
 function gnavOpen() {
   $('.gnav').show();
   $('.bg-black').fadeIn();
   $('body').addClass('is-menuOn');
   $('.js-menuBtn').addClass('is-active');
   $('.gnav').addClass('is-open');
-  $('.js-menuBtn img').each(function (i) {
-    $(this).attr('src', $(this).attr('src').replace('menu.png', 'close.png'));
+  $('.js-menuBtn img').each(function () {
+    var s = $(this).attr('src');
+    if (s) $(this).attr('src', s.replace('menu.png', 'close.png'));
   });
 }
 
@@ -45,231 +27,301 @@ function gnavClose() {
   $('body').removeClass('is-menuOn');
   $('.js-menuBtn').removeClass('is-active');
   $('.gnav').removeClass('is-open');
-  $('.js-menuBtn img').each(function (i) {
-    $(this).attr('src', $(this).attr('src').replace('close.png', 'menu.png'));
+  $('.js-menuBtn img').each(function () {
+    var s = $(this).attr('src');
+    if (s) $(this).attr('src', s.replace('close.png', 'menu.png'));
   });
 }
 
-$(function () {
-  //gnav
-  $('.js-menuBtn').click(function () {
-    if ($('body').hasClass('is-menuOn')) {
-      gnavClose();
-    } else {
-      gnavOpen();
-    }
-    return false;
+// =====================================
+// 画面幅に応じた初期表示（リサイズで再実行）
+// =====================================
+$(window).on('load resize', function () {
+  if ($(window).width() <= tabWidth) {
+    // スマホ
+    $('.js-searchTab:not(:first)').each(function () {
+      var $t = $($(this).attr('href'));
+      if ($t.length) $t.hide();
+    });
+    $('.js-searchTab:first').addClass('is-active');
+    $('.js-accordionBoxInner').hide();
+  } else {
+    // PC/タブレット
+    $('.js-searchTab').each(function () {
+      var $t = $($(this).attr('href'));
+      if ($t.length) $t.show();
+    });
+    $('.js-searchTab').removeClass('is-active');
+    $('.js-accordionBoxInner').show();
+  }
+  // メニューは基本閉じる
+  if (typeof gnavClose === 'function') gnavClose();
+});
+
+// =====================================
+// クリック系は「委譲」へ（インクルード後でも効く）
+// =====================================
+$(document)
+  .off('click.menu')
+  .on('click.menu', '.js-menuBtn', function (e) {
+    e.preventDefault();
+    if ($('body').hasClass('is-menuOn')) gnavClose();
+    else gnavOpen();
   });
 
-  $('.bg-black').click(function () {
+$(document)
+  .off('click.menuBg')
+  .on('click.menuBg', '.bg-black', function () {
     gnavClose();
   });
 
-  //    $('.js-menuBtn').click(function () {
-  //        $('body').toggleClass('is-menuOn');
-  //        $('.gnav').fadeToggle();
-  //        if ($('body').hasClass('is-menuOn')) {
-  //            $('.js-menuBtn img').each(function (i) {
-  //                $(this).attr('src', $(this).attr('src').replace('menu.png', 'close.png'));
-  //            });
-  //        } else {
-  //            $('.js-menuBtn img').each(function (i) {
-  //                $(this).attr('src', $(this).attr('src').replace('close.png', 'menu.png'));
-  //            });
-  //        }
-  //        return false;
-  //    });
-
-  //アコーディオン
-  $('.js-accordionBtn').click(function () {
-    $(this).toggleClass('is-on').parents('.js-accordionBox').find('.js-accordionBoxInner').slideToggle();
+// アコーディオン
+$(document)
+  .off('click.acc1')
+  .on('click.acc1', '.js-accordionBtn', function () {
+    $(this).toggleClass('is-on').parents('.js-accordionBox').find('.js-accordionBoxInner').stop(true, true).slideToggle();
     return false;
   });
 
-  //よくある質問アコーディオン
-  $('.js-faqAccordion').click(function () {
-    $(this).toggleClass('is-on').next().slideToggle();
+// FAQアコーディオン
+$(document)
+  .off('click.acc2')
+  .on('click.acc2', '.js-faqAccordion', function () {
+    $(this).toggleClass('is-on').next().stop(true, true).slideToggle();
     return false;
   });
 
-  //popup
-  $('.js-popupLink').on('click', function () {
+// ポップアップ
+$(document)
+  .off('click.popOpen')
+  .on('click.popOpen', '.js-popupLink', function () {
     popOpen($(this).attr('href'));
     return false;
   });
 
-  $('.js-popupClose').click(function () {
+$(document)
+  .off('click.popClose')
+  .on('click.popClose', '.js-popupClose', function () {
     popClose();
     return false;
   });
 
-  var pop = $('.js-popupBlock');
-  var bg = $('.bg-black');
-  var popFlag = 0;
+var popFlag = 0;
 
-  function popPosition(e) {
-    if ($(window).width() > tabWidth) {
-      $(e).css({
-        top: ($(window).height() - $(e).outerHeight()) / 2,
-        left: ($(window).width() - $(e).outerWidth()) / 2,
-      });
-    } else {
-      var SpPositionH = $(document).scrollTop();
-      if ($(window).height() >= $(e).outerHeight()) {
-        SpPositionH = $(document).scrollTop() + ($(window).height() - $(e).outerHeight()) / 2;
-      }
-      $(e).css({ top: SpPositionH, left: 0 });
+// その場で .bg-black を確実に用意して返す
+function ensureBg() {
+  var $bg = $('.bg-black');
+  if (!$bg.length) {
+    // なければ body 末尾に生成（スタッキングコンテキストの影響を受けにくい）
+    $bg = $('<div class="bg-black" aria-hidden="true"></div>').appendTo(document.body);
+  }
+  return $bg;
+}
+
+function popPosition(e) {
+  if (!e) return;
+  if ($(window).width() > tabWidth) {
+    $(e).css({
+      top: ($(window).height() - $(e).outerHeight()) / 2,
+      left: ($(window).width() - $(e).outerWidth()) / 2,
+    });
+  } else {
+    var SpPositionH = $(document).scrollTop();
+    if ($(window).height() >= $(e).outerHeight()) {
+      SpPositionH = $(document).scrollTop() + ($(window).height() - $(e).outerHeight()) / 2;
     }
+    $(e).css({ top: SpPositionH, left: 0 });
   }
+}
 
-  function popOpen(e) {
-    popPosition(e);
-    $(e).fadeIn(300);
-    bg.css({ zIndex: 998 }).fadeIn(300);
-    popFlag = 1;
-  }
+function popOpen(e) {
+  if (!e || !$(e).length) return;
+  var $bg = ensureBg();
+  popPosition(e);
+  $(e).stop(true, true).fadeIn(300);
+  $bg.css({ zIndex: 998 }).stop(true, true).fadeIn(300);
+  popFlag = 1;
+}
 
-  function popClose() {
-    pop.fadeOut(300);
-    bg.css({ zIndex: 50 }).fadeOut(300);
-    popFlag = 0;
-  }
-  bg.click(function () {
-    if (popFlag) {
-      popClose();
+function popClose() {
+  var $bg = ensureBg();
+  $('.js-popupBlock:visible').stop(true, true).fadeOut(300);
+  $bg.css({ zIndex: 50 }).stop(true, true).fadeOut(300);
+  popFlag = 0;
+}
+
+// 背景クリックは委譲（後から生成/インクルードでも拾える）
+$(document)
+  .off('click.popBg')
+  .on('click.popBg', '.bg-black', function () {
+    if (popFlag) popClose();
+  });
+
+// includes:ready で既存の .bg-black があれば body 末尾へ退避（z-index事故を減らす）
+document.addEventListener(
+  'includes:ready',
+  function () {
+    var $bg = $('.bg-black');
+    if ($bg.length) $bg.appendTo(document.body);
+  },
+  { once: true },
+);
+
+$(document)
+  .off('keydown.popEsc')
+  .on('keydown.popEsc', function (e) {
+    // IME合成中は無視（日本語入力の途中で誤反応しないように）
+    if (e.isComposing) return;
+    if (e.key === 'Escape' || e.key === 'Esc' || e.keyCode === 27) {
+      if (popFlag) {
+        e.preventDefault();
+        popClose();
+      }
     }
   });
-  //page scroll
-  $('a[href^="#"]:not([class*=js-])').click(function () {
-    var headH = $('.header').outerHeight();
-    var topicpathH = $('.topicpath').length > 0 ? $('.topicpath').outerHeight() : 0;
-    if ($(window).width() > tabWidth) {
-      var headerH = parseInt(headH) + parseInt(topicpathH) + 10;
-    } else {
-      var headerH = parseInt(headH);
-    }
-    var speed = 500;
+
+// =====================================
+// ページ内アンカー（委譲）
+// =====================================
+$(document)
+  .off('click.hash')
+  .on('click.hash', 'a[href^="#"]:not([class*=js-])', function (e) {
+    e.preventDefault();
+    var headH = $('.header').outerHeight() || 0;
+    var topicpathH = $('.topicpath').length ? $('.topicpath').outerHeight() || 0 : 0;
+    var headerH = $(window).width() > tabWidth ? parseInt(headH) + parseInt(topicpathH) + 10 : parseInt(headH);
     var href = $(this).attr('href');
-    var target = href == '#' || href == '' ? $('html') : $(href);
-
-    if (target.length > 0) {
-      var position = target.offset().top - headerH;
-      $('html,body').animate({ scrollTop: position }, speed, 'swing');
-    }
-    return false;
-  });
-
-  //別ページからの場合
-  $(window).on('load', function () {
-    var url = $(location).attr('href');
-    var headH = $('.header').outerHeight();
-    var topicpathH = $('.topicpath').length > 0 ? $('.topicpath').outerHeight() : 0;
-    if ($(window).width() > tabWidth) {
-      var headerH = parseInt(headH) + parseInt(topicpathH) + 10;
-    } else {
-      var headerH = parseInt(headH);
-    }
-    if (url.indexOf('#') != -1) {
-      var anchor = url.split('#');
-      var target = $('#' + anchor[anchor.length - 1]);
-      if (target.length) {
-        var pos = Math.floor(target.offset().top) - headerH;
-        $('html, body').animate({ scrollTop: pos }, 500);
-      }
+    var $target = href === '#' || href === '' ? $('html') : $(href);
+    if ($target.length) {
+      var position = Math.floor($target.offset().top) - headerH;
+      $('html,body').animate({ scrollTop: position }, 500, 'swing');
     }
   });
 
-  //searchTab
-  $('.js-searchTab').click(function () {
+// 別ページからの #hash
+$(window).on('load', function () {
+  var url = String(location.href || '');
+  if (url.indexOf('#') === -1) return;
+  var headH = $('.header').outerHeight() || 0;
+  var topicpathH = $('.topicpath').length ? $('.topicpath').outerHeight() || 0 : 0;
+  var headerH = $(window).width() > tabWidth ? parseInt(headH) + parseInt(topicpathH) + 10 : parseInt(headH);
+  var anchor = url.split('#');
+  var $target = $('#' + anchor[anchor.length - 1]);
+  if ($target.length) {
+    var pos = Math.floor($target.offset().top) - headerH;
+    $('html, body').animate({ scrollTop: pos }, 500);
+  }
+});
+
+// =====================================
+// 検索タブ
+// =====================================
+$(document)
+  .off('click.searchTab')
+  .on('click.searchTab', '.js-searchTab', function () {
     var tabUrl = $(this).attr('href');
     $('.js-searchTab').removeClass('is-active');
     $(this).addClass('is-active');
     $('.searchBox__item').hide();
-    $(tabUrl).fadeIn();
+    if (tabUrl && $(tabUrl).length) $(tabUrl).fadeIn();
     return false;
   });
 
-  //ページを閉じる
-  $('.js-pageClose').click(function () {
+// ページを閉じる
+$(document)
+  .off('click.pageClose')
+  .on('click.pageClose', '.js-pageClose', function () {
     window.open('about:blank', '_self').close();
     return false;
   });
-});
 
-//スクロールナビ
-$(function () {
-  if ($('.js-sectionNav').length) {
-    var navLink = $('.js-sectionNav a');
+// =====================================
+// スクロールナビ（.js-sectionNav）
+// =====================================
+function mountSectionNav() {
+  if (!$('.js-sectionNav').length) return;
 
-    //エリアを取得
-    var contentsArr = new Array();
-    for (var i = 0; i < navLink.length; i++) {
-      var targetContents = navLink.eq(i).attr('href');
-      if (targetContents.charAt(0) == '#') {
-        var targetContentsTop = $(targetContents).offset().top;
-        var targetContentsBottom = targetContentsTop + $(targetContents).outerHeight(true) - 1;
-        contentsArr[i] = [targetContentsTop, targetContentsBottom];
+  var navLink = $('.js-sectionNav a');
+  var contentsArr = [];
+
+  for (var i = 0; i < navLink.length; i++) {
+    var href = navLink.eq(i).attr('href');
+    if (href && href.charAt(0) === '#') {
+      var $t = $(href);
+      if ($t.length) {
+        var top = $t.offset().top;
+        var bottom = top + $t.outerHeight(true) - 1;
+        contentsArr[i] = [top, bottom];
       }
     }
+  }
 
-    //カレントのclassの制御
-    function currentCheck() {
-      var windowScrolltop = $(window).scrollTop() + 350;
-      if ($('.keyvisual').length) {
-        windowScrolltop = $(window).scrollTop() + $(window).height() + 350;
-      }
-      for (var i = 0; i < contentsArr.length; i++) {
-        if (contentsArr[i][0] <= windowScrolltop) {
-          navLink.removeClass('is-active');
-          navLink.eq(i).addClass('is-active');
-          i == contentsArr.length;
-        }
+  function currentCheck() {
+    var windowScrolltop = $(window).scrollTop() + 350;
+    if ($('.keyvisual').length) {
+      windowScrolltop = $(window).scrollTop() + $(window).height() + 350;
+    }
+    for (var i = 0; i < contentsArr.length; i++) {
+      if (contentsArr[i] && contentsArr[i][0] <= windowScrolltop) {
+        navLink.removeClass('is-active');
+        navLink.eq(i).addClass('is-active');
       }
     }
+  }
 
-    $(window).on('load scroll', function () {
+  $(window)
+    .off('.secnav')
+    .on('load.secnav scroll.secnav', function () {
       currentCheck();
 
-      //endBlockの設定
-      var endBlock = $('.footer').offset().top;
-      //footerの直前にnewsブロックがあった時
+      var $footer = $('.footer');
+      var endBlock = $footer.length ? $footer.offset().top : $(document).height();
+
       if ($('.news').length && $('.news').next().hasClass('footer')) {
-        endBlock = $('.news').offset().top;
-        console.log('A');
-      }
-      //ナビの最後に指定された要素の後に要素があった時
-      if ($($('.js-sectionNav a:last').attr('href')).next().length && !$($('.js-sectionNav a:last').attr('href')).next().hasClass('js-popupBlock')) {
-        endBlock = $($('.js-sectionNav a:last').attr('href')).next().offset().top - $(window).height() / 2;
+        var $news = $('.news');
+        if ($news.length) endBlock = $news.offset().top;
       }
 
-      //startBlock
+      var $lastNext = $($('.js-sectionNav a:last').attr('href')).next();
+      if ($lastNext.length && !$lastNext.hasClass('js-popupBlock')) {
+        endBlock = $lastNext.offset().top - $(window).height() / 2;
+      }
+
       var startBlock = $(window).height() / 2;
       if ($('.pageVisual').length) {
         startBlock = $('.pageVisual').offset().top + $('.pageVisual').height();
       }
 
-      //表示・非表示の制御
       if (endBlock > $(this).scrollTop() && $(this).scrollTop() > startBlock) {
         $('.js-sectionNav').addClass('is-show');
       } else {
         $('.js-sectionNav').removeClass('is-show');
       }
     });
+}
+$(mountSectionNav);
+document.addEventListener(
+  'includes:ready',
+  function () {
+    mountSectionNav();
+  },
+  { once: true },
+);
+
+// =====================================
+// 高さ揃え（存在時のみ）
+// =====================================
+jQuery(function ($) {
+  var $matchHeightItem = $('.serviceBox__item,.improvementBox__item__inner');
+  if ($matchHeightItem.length && $.fn.matchHeight) {
+    $matchHeightItem.matchHeight({ property: 'min-height' });
   }
 });
 
-//高さそろえ
+// =====================================
+// 活用例（検索ページ／ケースリスト）
+// =====================================
 jQuery(function ($) {
-  var $matchHeightItem = $('.serviceBox__item,.improvementBox__item__inner');
-  $matchHeightItem.matchHeight({
-    property: 'min-height',
-  });
-});
-
-jQuery(function ($) {
-  /*
-   * 活用例
-   */
   var $form = $('form#case-search');
   var $search_button = $('button.searchBox__btn');
   var $case_list = $('ul.caseList');
@@ -281,40 +333,29 @@ jQuery(function ($) {
   var $clone_list = $('ul.caseList li').clone(true);
   var li_length = $case_list.find('li').length;
 
-  // 検索ページに遷移して検索
-  var search_post = function () {
+  function search_post() {
     $form.submit();
-  };
+  }
 
-  // 検索ページで遷移なしで検索
-  var search_page = function () {
+  function search_page() {
     change_block();
     return false;
-  };
+  }
 
-  var search_reset = function () {
-    $dep_dl.find('input[type=checkbox]:checked').each(function () {
-      $(this).prop('checked', false);
-    });
-    $pur_dl.find('input[type=checkbox]:checked').each(function () {
-      $(this).prop('checked', false);
-    });
-    $func_dl.find('input[type=checkbox]:checked').each(function () {
-      $(this).prop('checked', false);
-    });
-  };
+  function search_reset() {
+    $dep_dl.find('input[type=checkbox]:checked').prop('checked', false);
+    $pur_dl.find('input[type=checkbox]:checked').prop('checked', false);
+    $func_dl.find('input[type=checkbox]:checked').prop('checked', false);
+  }
 
-  // 表示・非表示切替
-  var change_block = function () {
+  function change_block() {
     var class_name = '';
-    var dep = [];
-    var pur = [];
-    var func = [];
+    var dep = [],
+      pur = [],
+      func = [];
     var $span = $('<span class="filterBox__list__item">');
 
-    $filter_box.find('.filterBox__list__item').each(function () {
-      $(this).remove();
-    });
+    $filter_box.find('.filterBox__list__item').remove();
 
     if ($dep_dl.find('input[type=checkbox]:checked').length > 0) {
       dep = $dep_dl
@@ -327,7 +368,6 @@ jQuery(function ($) {
         })
         .get();
     }
-
     if ($pur_dl.find('input[type=checkbox]:checked').length > 0) {
       pur = $pur_dl
         .find('input[type=checkbox]:checked')
@@ -339,7 +379,6 @@ jQuery(function ($) {
         })
         .get();
     }
-
     if ($func_dl.find('input[type=checkbox]:checked').length > 0) {
       func = $func_dl
         .find('input[type=checkbox]:checked')
@@ -352,71 +391,40 @@ jQuery(function ($) {
         .get();
     }
 
-    if ($filter_box.find('.filterBox__list__item').length > 0) {
-      $filter_box.show();
-    } else {
-      $filter_box.hide();
-    }
+    if ($filter_box.find('.filterBox__list__item').length > 0) $filter_box.show();
+    else $filter_box.hide();
 
-    /*
-        // 削除したDOMを戻す
-        $.each(hide_doms, function(i,v){
-            if( v ) {
-                if( $case_list.find('li').eq(i).length > 0 )
-                    $case_list.find('li').eq(i).before(v);
-                else
-                    $case_list.find('li').eq(i-1).after(v);
-            }
-        });
-        hide_doms = [];
-*/
-
-    // $case_list.find('li').show();
     $case_list.empty();
     $case_list.append($clone_list.clone(true));
-    // 縦列はOR検索、横はAND検索とする
-    $case_list.find('li').each(function (i, target) {
+
+    $case_list.find('li').each(function (_i, target) {
       $.each(dep, function (j, v) {
         if ($(target).hasClass(v)) return false;
-        // cssでnthを使用しているため、hideでは崩れてしまう。一度DOMを削除する
         else if (dep.length === j + 1) $(target).remove();
-        // hide_doms[i] = $(target).clone(true);
       });
       $.each(pur, function (j, v) {
         if ($(target).hasClass(v)) return false;
-        if (pur.length === j + 1) $(target).remove();
-        // hide_doms[i] = $(target).clone(true);
+        else if (pur.length === j + 1) $(target).remove();
       });
       $.each(func, function (j, v) {
         if ($(target).hasClass(v)) return false;
-        if (func.length === j + 1) $(target).remove();
-        // hide_doms[i] = $(target).clone(true);
+        else if (func.length === j + 1) $(target).remove();
       });
     });
-    /*
-        // ループ中にDOMを削除すると、iの値がおかしくなるので削除はここで一括でおこなう
-        $.each(hide_doms.reverse(), function(i,v){
-            if( v ) {
-                $case_list.find('li').eq(li_length-(i+1)).remove();
-            }
-        });
-        // 戻す
-        hide_doms.reverse();
-*/
 
     var $caseMatchHeightItem = $('.caseList__text');
-    $caseMatchHeightItem.matchHeight({
-      property: 'min-height',
-    });
-  };
+    if ($caseMatchHeightItem.length && $.fn.matchHeight) {
+      $caseMatchHeightItem.matchHeight({ property: 'min-height' });
+    }
+  }
 
   $search_button.on('click', function () {
     if ($(this).attr('id') === top_button) {
       search_post();
-      $('html,body').animate({ scrollTop: $('#case-list').offset().top }, 500, 'swing');
+      if ($('#case-list').length) $('html,body').animate({ scrollTop: $('#case-list').offset().top }, 500, 'swing');
     } else {
       search_page();
-      $('html,body').animate({ scrollTop: $('#case-list').offset().top }, 500, 'swing');
+      if ($('#case-list').length) $('html,body').animate({ scrollTop: $('#case-list').offset().top }, 500, 'swing');
       return false;
     }
   });
@@ -431,24 +439,21 @@ jQuery(function ($) {
   }
 });
 
+// =====================================
+// よくある質問（検索）
+// =====================================
 jQuery(function ($) {
-  /*
-   * よくある質問
-   */
-
   var $checbox_dd = $('.searchFilterBox__inner');
   var $filter_button = $('button.searchFilterBox__btn');
   var $faq_list = $('.faqAccordion');
   var $filter_box = $('.filterBox');
 
-  var search_page = function () {
+  function search_page() {
     var class_name = '';
     var faq = [];
     var $span = $('<span class="filterBox__list__item">');
 
-    $filter_box.find('.filterBox__list__item').each(function () {
-      $(this).remove();
-    });
+    $filter_box.find('.filterBox__list__item').remove();
 
     if ($checbox_dd.find('input[type=checkbox]:checked').length > 0) {
       faq = $checbox_dd
@@ -461,39 +466,30 @@ jQuery(function ($) {
         })
         .get();
     }
-    if ($filter_box.find('.filterBox__list__item').length > 0) {
-      $filter_box.show();
-    } else {
-      $filter_box.hide();
-    }
+    if ($filter_box.find('.filterBox__list__item').length > 0) $filter_box.show();
+    else $filter_box.hide();
+
     $faq_list.find('li').show();
-    // 縦列はOR検索、横はAND検索とする
-    $faq_list.find('li').each(function (i, target) {
+    $faq_list.find('li').each(function (_i, target) {
       $.each(faq, function (j, v) {
         if ($(target).hasClass(v)) return false;
         else if (faq.length === j + 1) $(target).hide();
       });
     });
-  };
-  var search_reset = function () {
-    $checbox_dd.find('input[type=checkbox]:checked').each(function () {
-      $(this).prop('checked', false);
-    });
-  };
+  }
+  function search_reset() {
+    $checbox_dd.find('input[type=checkbox]:checked').prop('checked', false);
+  }
 
   $filter_button.on('click', function () {
     search_page();
-
-    var headH = $('.header').outerHeight();
-    var topicpathH = $('.topicpath').outerHeight();
-    if ($(window).width() > tabWidth) {
-      var headerH = parseInt(headH) + parseInt(topicpathH) + 10;
-    } else {
-      var headerH = parseInt(headH);
+    var headH = $('.header').outerHeight() || 0;
+    var topicpathH = $('.topicpath').outerHeight() || 0;
+    var headerH = $(window).width() > tabWidth ? parseInt(headH) + parseInt(topicpathH) + 10 : parseInt(headH);
+    if ($('#faq-list').length) {
+      var position = $('#faq-list').offset().top - headerH;
+      $('html,body').animate({ scrollTop: position }, 500, 'swing');
     }
-    var position = $('#faq-list').offset().top - headerH;
-    $('html,body').animate({ scrollTop: position }, 500, 'swing');
-
     return false;
   });
 
