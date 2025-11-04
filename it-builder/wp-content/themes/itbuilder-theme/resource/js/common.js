@@ -1,36 +1,88 @@
-// /wp-content/themes/itbuilder-theme/resource/js/common.js
-// ※ 既存ファイルをこの内容で置き換え
-
 // =====================================
 // 共通設定
 // =====================================
 var tabWidth = 768;
 
+// -------------------------------------
+// フォーカス可能要素の取得（簡易）
+// -------------------------------------
+function getFocusables($root) {
+  return $root
+    .find(
+      'a[href], area[href], input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, [tabindex]:not([tabindex="-1"]), [contenteditable="true"]',
+    )
+    .filter(':visible');
+}
+
 // =====================================
-// メニュー開閉（そのまま利用：外部からも呼べる）
+// メニュー開閉（外部からも呼べる）＋ ARIA / フォーカス制御
 // =====================================
 function gnavOpen() {
-  $('.gnav').show();
-  $('.bg-black').fadeIn();
-  $('body').addClass('is-menuOn');
-  $('.js-menuBtn').addClass('is-active');
-  $('.gnav').addClass('is-open');
-  $('.js-menuBtn img').each(function () {
+  var $gnav = $('.gnav');
+  var $btns = $('.js-menuBtn');
+  var $bg = $('.bg-black');
+
+  $gnav.show().addClass('is-open').attr({ 'aria-hidden': 'false' });
+  $('body').addClass('is-menuOn').attr('data-menu', 'open');
+
+  $btns.addClass('is-active').attr('aria-expanded', 'true').attr('aria-controls', 'gnav');
+  if ($bg.length) $bg.attr('aria-hidden', 'false');
+
+  // 画像切替
+  $btns.find('img').each(function () {
     var s = $(this).attr('src');
     if (s) $(this).attr('src', s.replace('menu.png', 'close.png'));
   });
+
+  // フォーカストラップ
+  var $focusables = getFocusables($gnav);
+  var $first = $focusables.first();
+  var $last = $focusables.last();
+  if ($first.length) $first.trigger('focus');
+
+  // trap を1回だけセット（重複防止）
+  $(document)
+    .off('keydown.gnavTrap')
+    .on('keydown.gnavTrap', function (e) {
+      if (!$('body').hasClass('is-menuOn')) return; // 開いてないなら何もしない
+      if (e.key === 'Tab') {
+        // Shift+Tab で先頭から末尾へ
+        if (e.shiftKey && document.activeElement === $first.get(0)) {
+          e.preventDefault();
+          $last.trigger('focus');
+        }
+        // Tab で末尾から先頭へ
+        else if (!e.shiftKey && document.activeElement === $last.get(0)) {
+          e.preventDefault();
+          $first.trigger('focus');
+        }
+      }
+    });
 }
 
 function gnavClose() {
-  $('.gnav').hide();
-  $('.bg-black').fadeOut();
-  $('body').removeClass('is-menuOn');
-  $('.js-menuBtn').removeClass('is-active');
-  $('.gnav').removeClass('is-open');
-  $('.js-menuBtn img').each(function () {
+  var $gnav = $('.gnav');
+  var $btns = $('.js-menuBtn');
+  var $bg = $('.bg-black');
+
+  $gnav.hide().removeClass('is-open').attr({ 'aria-hidden': 'true' });
+  $('body').removeClass('is-menuOn').attr('data-menu', 'closed');
+
+  $btns.removeClass('is-active').attr('aria-expanded', 'false');
+  if ($bg.length) $bg.attr('aria-hidden', 'true');
+
+  // 画像戻す
+  $btns.find('img').each(function () {
     var s = $(this).attr('src');
     if (s) $(this).attr('src', s.replace('close.png', 'menu.png'));
   });
+
+  // trap 解除
+  $(document).off('keydown.gnavTrap');
+
+  // 閉じたらトリガーボタンへフォーカスを戻す（最後に押されたボタン想定でOK）
+  var $lastBtn = $btns.last();
+  if ($lastBtn.length) $lastBtn.trigger('focus');
 }
 
 // =====================================
@@ -59,7 +111,7 @@ $(window).on('load resize', function () {
 });
 
 // =====================================
-// クリック系は「委譲」へ（インクルード後でも効く）
+// クリック委譲（インクルード後でも効く）
 // =====================================
 $(document)
   .off('click.menu')
@@ -75,7 +127,67 @@ $(document)
     gnavClose();
   });
 
+// =====================================
+// Esc キーでメニュー/ポップアップを閉じる（IME合成中は無視）
+// =====================================
+// === Esc でメニュー/ポップアップを確実に閉じる（include後でもOK・他コードに消されない） ===
+(function ensureGlobalEscClose() {
+  if (window.__escCloseBound__) return;
+  window.__escCloseBound__ = true;
+
+  function tryCloseByEsc(e) {
+    // IME合成中や修飾キーだけは無視
+    if (e.isComposing) return;
+    const key = e.key || e.code;
+    if (!(key === 'Escape' || key === 'Esc' || e.keyCode === 27)) return;
+
+    let closed = false;
+
+    // メニューが開いていれば閉じる（is-menuOn / .gnav.is-open のどちらでも検出）
+    if (document.body.classList.contains('is-menuOn') || document.querySelector('.gnav.is-open')) {
+      if (typeof window.gnavClose === 'function') {
+        e.preventDefault();
+        window.gnavClose();
+        closed = true;
+      }
+    }
+
+    // ポップアップがあれば閉じる（popFlag or 可視ブロックどちらでも）
+    try {
+      const hasVisiblePopup = typeof window.popFlag !== 'undefined' ? !!window.popFlag : !!document.querySelector('.js-popupBlock:is(:not([style*="display: none"]))');
+      if (hasVisiblePopup && typeof window.popClose === 'function') {
+        e.preventDefault();
+        window.popClose();
+        closed = true;
+      }
+    } catch {}
+
+    // 背景（.bg-black）が出ているときの保険
+    const bg = document.querySelector('.bg-black');
+    if (!closed && bg && bg.offsetParent !== null) {
+      e.preventDefault();
+      if (typeof window.popClose === 'function') window.popClose();
+      if (typeof window.gnavClose === 'function') window.gnavClose();
+    }
+  }
+
+  // 他のコードに stopPropagation されても届くように、キャプチャ段階で2箇所に登録
+  window.addEventListener('keydown', tryCloseByEsc, true);
+  document.addEventListener('keydown', tryCloseByEsc, true);
+
+  // フラグメント置換（include-lite）完了後も念のため有効化（重複登録は上のガードで防止）
+  document.addEventListener(
+    'includes:ready',
+    function () {
+      /* no-op: 既に有効 */
+    },
+    { once: true },
+  );
+})();
+
+// =====================================
 // アコーディオン
+// =====================================
 $(document)
   .off('click.acc1')
   .on('click.acc1', '.js-accordionBtn', function () {
@@ -112,7 +224,6 @@ var popFlag = 0;
 function ensureBg() {
   var $bg = $('.bg-black');
   if (!$bg.length) {
-    // なければ body 末尾に生成（スタッキングコンテキストの影響を受けにくい）
     $bg = $('<div class="bg-black" aria-hidden="true"></div>').appendTo(document.body);
   }
   return $bg;
@@ -139,25 +250,25 @@ function popOpen(e) {
   var $bg = ensureBg();
   popPosition(e);
   $(e).stop(true, true).fadeIn(300);
-  $bg.css({ zIndex: 998 }).stop(true, true).fadeIn(300);
+  $bg.css({ zIndex: 998 }).stop(true, true).fadeIn(300).attr('aria-hidden', 'false');
   popFlag = 1;
 }
 
 function popClose() {
   var $bg = ensureBg();
   $('.js-popupBlock:visible').stop(true, true).fadeOut(300);
-  $bg.css({ zIndex: 50 }).stop(true, true).fadeOut(300);
+  $bg.css({ zIndex: 50 }).stop(true, true).fadeOut(300).attr('aria-hidden', 'true');
   popFlag = 0;
 }
 
-// 背景クリックは委譲（後から生成/インクルードでも拾える）
+// 背景クリックは委譲
 $(document)
   .off('click.popBg')
   .on('click.popBg', '.bg-black', function () {
     if (popFlag) popClose();
   });
 
-// includes:ready で既存の .bg-black があれば body 末尾へ退避（z-index事故を減らす）
+// includes:ready で既存の .bg-black を body 末尾へ退避
 document.addEventListener(
   'includes:ready',
   function () {
@@ -166,19 +277,6 @@ document.addEventListener(
   },
   { once: true },
 );
-
-$(document)
-  .off('keydown.popEsc')
-  .on('keydown.popEsc', function (e) {
-    // IME合成中は無視（日本語入力の途中で誤反応しないように）
-    if (e.isComposing) return;
-    if (e.key === 'Escape' || e.key === 'Esc' || e.keyCode === 27) {
-      if (popFlag) {
-        e.preventDefault();
-        popClose();
-      }
-    }
-  });
 
 // =====================================
 // ページ内アンカー（委譲）
@@ -331,17 +429,14 @@ jQuery(function ($) {
   var $pur_dl = $('#a-searchPurpose');
   var $func_dl = $('#a-searchKeyword');
   var $clone_list = $('ul.caseList li').clone(true);
-  var li_length = $case_list.find('li').length;
 
   function search_post() {
     $form.submit();
   }
-
   function search_page() {
     change_block();
     return false;
   }
-
   function search_reset() {
     $dep_dl.find('input[type=checkbox]:checked').prop('checked', false);
     $pur_dl.find('input[type=checkbox]:checked').prop('checked', false);
@@ -349,7 +444,6 @@ jQuery(function ($) {
   }
 
   function change_block() {
-    var class_name = '';
     var dep = [],
       pur = [],
       func = [];
@@ -364,7 +458,7 @@ jQuery(function ($) {
           var span_clone = $span.clone();
           span_clone.text($(this).next().text());
           $filter_box.find('dd').append(span_clone);
-          return (class_name = $(this).attr('name').replace('[]', '_') + $(this).val());
+          return $(this).attr('name').replace('[]', '_') + $(this).val();
         })
         .get();
     }
@@ -375,7 +469,7 @@ jQuery(function ($) {
           var span_clone = $span.clone();
           span_clone.text($(this).next().text());
           $filter_box.find('dd').append(span_clone);
-          return (class_name = $(this).attr('name').replace('[]', '_') + $(this).val());
+          return $(this).attr('name').replace('[]', '_') + $(this).val();
         })
         .get();
     }
@@ -386,7 +480,7 @@ jQuery(function ($) {
           var span_clone = $span.clone();
           span_clone.text($(this).next().text());
           $filter_box.find('dd').append(span_clone);
-          return (class_name = $(this).attr('name').replace('[]', '_') + $(this).val());
+          return $(this).attr('name').replace('[]', '_') + $(this).val();
         })
         .get();
     }
@@ -449,7 +543,6 @@ jQuery(function ($) {
   var $filter_box = $('.filterBox');
 
   function search_page() {
-    var class_name = '';
     var faq = [];
     var $span = $('<span class="filterBox__list__item">');
 
@@ -462,20 +555,22 @@ jQuery(function ($) {
           var span_clone = $span.clone();
           span_clone.text($(this).next().text());
           $filter_box.find('dd').append(span_clone);
-          return (class_name = $(this).attr('name').replace('[]', '_') + $(this).val());
+          return $(this).attr('name').replace('[]', '_') + $(this).val();
         })
         .get();
     }
     if ($filter_box.find('.filterBox__list__item').length > 0) $filter_box.show();
     else $filter_box.hide();
 
-    $faq_list.find('li').show();
-    $faq_list.find('li').each(function (_i, target) {
-      $.each(faq, function (j, v) {
-        if ($(target).hasClass(v)) return false;
-        else if (faq.length === j + 1) $(target).hide();
+    $faq_list
+      .find('li')
+      .show()
+      .each(function (_i, target) {
+        $.each(faq, function (j, v) {
+          if ($(target).hasClass(v)) return false;
+          else if (faq.length === j + 1) $(target).hide();
+        });
       });
-    });
   }
   function search_reset() {
     $checbox_dd.find('input[type=checkbox]:checked').prop('checked', false);
