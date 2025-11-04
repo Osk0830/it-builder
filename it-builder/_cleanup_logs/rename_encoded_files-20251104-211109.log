@@ -1,0 +1,11 @@
+[info] base=it-builder, apply=1
+[rename] it-builder/2022/index.html?post_type=news.html -> it-builder/2022/index.html.html
+[rename] it-builder/2024/index.html?post_type=news.html -> it-builder/2024/index.html.html
+[rename] it-builder/2023/index.html?post_type=news.html -> it-builder/2023/index.html.html
+[rename] it-builder/2017/index.html?post_type=news.html -> it-builder/2017/index.html.html
+[rename] it-builder/2019/index.html?post_type=news.html -> it-builder/2019/index.html.html
+[rename] it-builder/2020/index.html?post_type=news.html -> it-builder/2020/index.html.html
+[rename] it-builder/2018/index.html?post_type=news.html -> it-builder/2018/index.html.html
+[rename] it-builder/2016/index.html?post_type=news.html -> it-builder/2016/index.html.html
+[done] scanned=8 renamed=8 deleted=0 conflict=0 kept=0
+[log] it-builder/_cleanup_logs/rename_encoded_files-20251104-211109.log
