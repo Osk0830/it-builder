@@ -20,7 +20,7 @@
   align-items: center;
   position: relative;
   height: 100vh;
-  background: url(../img/top_visual_bg.jpg) no-repeat 50% 50% / cover;
+  background: url(/it-builder/wp-content/themes/itbuilder-theme/resource/img/top_visual_bg.jpg) no-repeat 50% 50% / cover;
   color: #fff;
 }
 .keyvisual > .inner {
@@ -49,7 +49,7 @@
 }
 .keyvisual__slide .slick-arrow {
   display: none !important;
-  background: url(../img/ic_arrow.svg) no-repeat 50% 50%/17px 8px;
+  background: url(/it-builder/wp-content/themes/itbuilder-theme/resource/img/ic_arrow.svg) no-repeat 50% 50%/17px 8px;
   margin: 0;
   bottom: -10px;
 }
@@ -86,7 +86,7 @@
 
 @media only screen and (max-width: 768px) {
   .keyvisual {
-    background-image: url(../img/top_visual_bg_sp.jpg);
+    background-image: url(/it-builder/wp-content/themes/itbuilder-theme/resource/img/top_visual_bg_sp.jpg);
   }
   .keyvisual > .inner {
     display: block;
@@ -276,10 +276,10 @@
   height: 48px;
 }
 .costPoint__title--user::before {
-  background: url(../img/ic_cost_user.png) no-repeat 0 50% / contain;
+  background: url(/it-builder/wp-content/themes/itbuilder-theme/resource/img/ic_cost_user.png) no-repeat 0 50% / contain;
 }
 .costPoint__title--trial::before {
-  background: url(../img/ic_cost_trial.png) no-repeat 0 50% / contain;
+  background: url(/it-builder/wp-content/themes/itbuilder-theme/resource/img/ic_cost_trial.png) no-repeat 0 50% / contain;
 }
 .costPoint__text {
   margin: 0 0 40px;
@@ -345,7 +345,7 @@
   margin: 75px 0 0;
 }
 .installationBox .slick-arrow {
-  background: url(../img/ic_arrow_keycolor.svg) no-repeat 50% 50%/17px 8px;
+  background: url(/it-builder/wp-content/themes/itbuilder-theme/resource/img/ic_arrow_keycolor.svg) no-repeat 50% 50%/17px 8px;
   margin: 0;
   bottom: -10px;
 }
