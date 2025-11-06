@@ -1,6 +1,6 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
-    <head>
+  <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-D733JDSWR7"></script>
     <!-- Google tag (gtag.js) -->
@@ -18,15 +18,12 @@
     <title>活用例 &#8211; イットbuilder</title>
     <meta name="robots" content="max-image-preview:large" />
 
-
-
     <link rel="stylesheet" type="text/css" media="all" />
 
     <script type="text/javascript"></script>
     <link rel="alternate" type="application/json" href="/it-builder/wp-json/wp/v2/pages/12" />
 
-    <link rel="wlwmanifest" type="application/wlwmanifest+xml" />
-    <!-- FIXME: canonical removed: <!-- FIXME: canonical removed: <link rel="canonical" href="/_orphans/" /> --> -->
+    <!-- FIXME: canonical removed: <link rel="canonical" href="/_orphans/" /> -->
     <link rel="alternate" />
     <link rel="alternate" />
     <meta name="description" content="イットbuilderは業務のお悩みを軽快かつスピーディに改善できるWeb業務アプリ作成ツールです。標準部品を組み合わせるだけで、日頃のお困りごとを解決する業務アプリを自分たちの手で簡単に作成できます。" />
@@ -39,7 +36,7 @@
   </head>
   <body data-rsssl="1">
     <div data-include="header"></div>
-    <div class="pageVisual" style="background-image: url(../wp-content/uploads/2018/09/case_visual_bg.jpg)">
+    <div class="pageVisual" style="background-image: url(/it-builder/wp-content/uploads/2018/09/case_visual_bg.jpg)">
       <p class="pageVisual__en">
         <img src="/it-builder/wp-content/uploads/2018/07/title_case_white.png" alt="活用例" />
       </p>
@@ -55,18 +52,18 @@
     <div class="caseSearch">
       <div class="inner">
         <section id="a-searchBox" class="searchBox">
-          <form id="case-search" action="#"" method="post"> data-orphan="true" data-todo="map-form-action"
+          <form id="case-search" action="/case/#case-list" method="post">
             <h3 class="searchBox__title">活用例 絞り込みガイド</h3>
             <div class="searchBox__inner">
               <ul class="searchBox__tab spShow">
                 <li class="searchBox__tab__item">
-                  <a href="#"" class="searchBox__tab__anchor js-searchTab"> aria-disabled="true" class="is-disabled" data-orphan="true"<!-- TODO: map-from-/orphans/ -->部門</a>
+                  <a href="#a-searchDepartment" class="searchBox__tab__anchor js-searchTab">部門</a>
                 </li>
                 <li class="searchBox__tab__item">
-                  <a href="#"" class="searchBox__tab__anchor js-searchTab"> aria-disabled="true" class="is-disabled" data-orphan="true"<!-- TODO: map-from-/orphans/ -->目的</a>
+                  <a href="#a-searchPurpose" class="searchBox__tab__anchor js-searchTab">目的</a>
                 </li>
                 <li class="searchBox__tab__item">
-                  <a href="#"" class="searchBox__tab__anchor js-searchTab"> aria-disabled="true" class="is-disabled" data-orphan="true"<!-- TODO: map-from-/orphans/ -->機能</a>
+                  <a href="#a-searchKeyword" class="searchBox__tab__anchor js-searchTab">機能</a>
                 </li>
               </ul>
               <dl id="a-searchDepartment" class="searchBox__item">
@@ -202,7 +199,7 @@
             <dl class="filterBox" style="display: none">
               <dt class="filterBox__title">活用例 絞り込み条件</dt>
               <dd class="filterBox__list">
-                <a href="#"" class="filterBox__list__reset js-none"> aria-disabled="true" class="is-disabled" data-orphan="true"<!-- TODO: map-from-/orphans/ --></a>
+                <a href="#case-list" class="filterBox__list__reset js-none"></a>
               </dd>
             </dl>
             <ul class="caseList">
@@ -392,7 +389,7 @@
           </div>
         </div>
         <p class="detailBtn">
-          <a href="#"" class="detailBtn__anchor"> aria-disabled="true" class="is-disabled" data-orphan="true"<!-- TODO: map-from-/orphans/ -->
+          <a href="#a-searchBox" class="detailBtn__anchor">
             絞り込みガイドに戻る
             <svg class="u-ico detailBtn__icon--top">
               <use xlink:href="#a-icoArrow"></use>
@@ -410,7 +407,6 @@
     <script src="/it-builder/wp-content/themes/itbuilder-theme/resource/js/lib/jquery.matchHeight.js"></script>
     <script src="/it-builder/wp-content/themes/itbuilder-theme/resource/js/common.js"></script>
     <script defer src="/it-builder/assets/js/search-case-bridge.js"></script>
-
 
     <div data-include="sprite"></div>
   </body>

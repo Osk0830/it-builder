@@ -1,0 +1,117 @@
+@charset "UTF-8";
+
+/* ===== It-builder Lightbox (no jQuery) ===== */
+.ibLightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  background: rgba(0,0,0,.72);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .18s ease;
+}
+.ibLightbox.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.ibLightbox__stage {
+  min-height: 0;
+  display: grid;
+  place-items: center;
+  padding: 4vmin;
+}
+
+.ibLightbox__imgwrap {
+  position: relative;
+  max-width: 92vw;
+  max-height: 86vh;
+  outline: none;
+}
+.ibLightbox__imgwrap img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  box-shadow: 0 12px 40px rgba(0,0,0,.35);
+  background: #fff;
+  border-radius: 8px;
+}
+
+.ibLightbox__caption {
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 10px 16px 16px;
+  text-align: center;
+  word-break: break-word;
+}
+
+/* Controls */
+.ibLightbox__close,
+.ibLightbox__prev,
+.ibLightbox__next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  appearance: none;
+  border: 0;
+  background: rgba(0,0,0,.45);
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+.ibLightbox__close {
+  top: 12px;
+  right: 12px;
+  transform: none;
+}
+.ibLightbox__prev { left: 10px; }
+.ibLightbox__next { right: 10px; }
+
+/* Chevron / X using CSS only */
+.ibLightbox__prev::before,
+.ibLightbox__next::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+}
+.ibLightbox__prev::before { transform: rotate(-135deg); }
+.ibLightbox__next::before { transform: rotate(45deg); }
+.ibLightbox__close::before,
+.ibLightbox__close::after {
+  content: "";
+  position: absolute;
+  width: 18px; height: 2px; background: #fff;
+}
+.ibLightbox__close::before { transform: rotate(45deg); }
+.ibLightbox__close::after  { transform: rotate(-45deg); }
+
+.ibLightbox__btn[disabled] { opacity: .35; cursor: default; }
+
+/* Cursor helpers */
+.ibLightbox__stage { cursor: zoom-out; }
+.ibLightbox__imgwrap { cursor: default; }
+
+/* Scroll lock helper on <body> */
+.ibScrollLock {
+  overflow: hidden !important;
+  touch-action: none;
+}
+
+/* Small screens */
+@media (max-width: 767.98px) {
+  .ibLightbox__prev, .ibLightbox__next {
+    width: 40px; height: 40px;
+  }
+}
