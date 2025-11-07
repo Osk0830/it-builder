@@ -7080,6 +7080,7 @@ body.is-menuOn .bg-black {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  row-gap: 70px;
 }
 
 /* ブロック分割定義 */
