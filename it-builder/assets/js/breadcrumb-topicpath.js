@@ -11,7 +11,7 @@
       '/user/': 'ご利用中のお客さま',
       '/installation/': '導入実績',
       '/faq/': 'よくある質問',
-      '/news/': 'NEWS',
+      '/news/': 'お知らせ',
       '/sitemap/': 'サイトマップ',
       '/sitepolicy/': 'サイトポリシー',
     };

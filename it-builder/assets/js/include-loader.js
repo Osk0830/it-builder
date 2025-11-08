@@ -2,19 +2,16 @@
 (() => {
   'use strict';
 
-  // ==== 設定 ====
-  const ROOT = '/it-builder'; // includes のルート
-  const TIMEOUT = 15000; // fetch タイムアウト(ms)
-  const ATTR_INCLUDE = 'data-include'; // 例: <div data-include="header"></div>
-  const ATTR_SRC = 'data-include-src'; // 直接パス指定したい場合だけ
+  const ROOT = '/it-builder';
+  const TIMEOUT = 15000;
+  const ATTR_INCLUDE = 'data-include';
+  const ATTR_SRC = 'data-include-src';
 
-  // ---- ユーティリティ ----
   const ready = (fn) => (document.readyState !== 'loading' ? fn() : document.addEventListener('DOMContentLoaded', fn, { once: true }));
 
   const absolute = (u) => /^https?:\/\//i.test(u) || u.startsWith('/');
   const norm = (u) => u.replace(/([^:]\/)\/+/g, '$1');
 
-  // data-include/src → 取得URL
   const urlFor = (el) => {
     const name = el.getAttribute(ATTR_INCLUDE)?.trim();
     const src = el.getAttribute(ATTR_SRC)?.trim();
@@ -34,7 +31,6 @@
         .finally(() => clearTimeout(id));
     });
 
-  // HTML → DocumentFragment（安全のため <script> は既定で無効化）
   const toFragment = (html) => {
     const t = document.createElement('template');
     t.innerHTML = html;
@@ -49,7 +45,6 @@
     return t.content;
   };
 
-  // 丸っと置換（host 自体を置換）
   const replaceSelf = (host, frag) => {
     const parent = host.parentNode;
     if (!parent) return;
@@ -60,18 +55,51 @@
     marker.remove();
   };
 
+  // --- 追加: 取り込んだ断片に対する後処理（名前 + パラメータで分岐） ---
+  function postProcess(name, frag, params) {
+    // news-menu: data-current="YYYY" を受け取り、該当年に aria-current="page"
+    if (name === 'news-menu' && params?.current) {
+      const year = String(params.current).trim();
+      const root = frag.querySelector('.newsMenu') || frag;
+      const links = [...root.querySelectorAll('.newsMenu__anchor')];
+      for (const a of links) {
+        const label = (a.textContent || '').trim();
+        const href = a.getAttribute('href') || '';
+        if (label === year || href.includes(`/${year}/`) || (href === 'index.html' && label === year)) {
+          a.setAttribute('aria-current', 'page');
+        } else {
+          a.removeAttribute('aria-current');
+        }
+      }
+    }
+    // 他の include 名でも増やせる:
+    // if (name === 'xxx') { ... }
+  }
+
   const processOne = async (el) => {
     if (el.dataset.included === 'true') return;
     const url = urlFor(el);
     if (!url) return;
 
+    const name = el.getAttribute(ATTR_INCLUDE)?.trim() || '';
+    const params = {};
+    for (const [k, v] of Object.entries(el.dataset)) {
+      if (k === 'include' || k === 'includeSrc' || k === 'included') continue;
+      params[k] = v;
+    }
+
     try {
       const html = await fetchText(url);
       const frag = toFragment(html);
-      replaceSelf(el, frag); // ★ 丸ごと置換
+
+      // ★ 追加: 断片に対する後処理フック
+      try {
+        postProcess(name, frag, params);
+      } catch {}
+
+      replaceSelf(el, frag);
       el.dataset.included = 'true';
-      // ネスト対応：新しく現れた要素の中も走査
-      scan(document);
+      scan(document); // ネスト対応
     } catch (e) {
       console.error('[include-lite] fetch failed:', url, e);
     }
