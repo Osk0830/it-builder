@@ -5204,7 +5204,10 @@ html {
   font-weight: 500;
   background: url(/it-builder/wp-content/themes/itbuilder-theme/resource/img/ic_arrow_circle_support.svg) no-repeat 0 0/20px;
 }
-
+.newsMenu__anchor[aria-current="page"] {
+  color: #f0393a;
+  font-weight: 600;
+}
 @media only screen and (max-width: 768px) {
   .newsPage__title {
     display: none;
