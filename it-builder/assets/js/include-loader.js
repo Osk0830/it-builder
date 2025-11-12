@@ -55,7 +55,7 @@
     marker.remove();
   };
 
-  // --- 追加: 取り込んだ断片に対する後処理（名前 + パラメータで分岐） ---
+  // --- 取り込んだ断片に対する後処理（名前 + パラメータで分岐） ---
   function postProcess(name, frag, params) {
     // news-menu: data-current="YYYY" を受け取り、該当年に aria-current="page"
     if (name === 'news-menu' && params?.current) {
@@ -74,6 +74,51 @@
     }
     // 他の include 名でも増やせる:
     // if (name === 'xxx') { ... }
+
+    // ★ about-tab: data-current="..." に一致する li > a に .is-active を付与
+    if (name === 'about-tab' && params?.current) {
+      const key = String(params.current).trim();
+      // include断片の中からナビのスコープを特定（柔軟に）
+      const scope = frag.querySelector('.aboutNav') || frag.querySelector('.aboutNav__list') || frag.querySelector('nav, ul, ol') || frag;
+
+      // まず対象 a を探す（典型とフォールバックの2パターン）
+      const target = scope.querySelector(`.aboutNav__list__item[data-current="${key}"] > .aboutNav__list__anchor`) || scope.querySelector(`[data-current="${key}"] > a`);
+
+      if (target) {
+        // 同スコープ内の既存 is-active をリセット
+        scope.querySelectorAll('a.is-active').forEach((a) => a.classList.remove('is-active'));
+        // 付与
+        target.classList.add('is-active');
+      } else {
+        // 必要ならデバッグ（普段はコメントアウト推奨）
+        // console.warn('[include-lite] about-tab: target not found for', key);
+      }
+    }
+
+    // ★ about-nav（SP用の aboutSmallNav）:
+    //   data-current="..." に一致する li を非表示にする
+    if (name === 'about-nav' && params?.current) {
+      const key = String(params.current).trim();
+
+      // 断片内の .aboutSmallNav のうち、data-current を持つリストだけ対象
+      const lists = [...frag.querySelectorAll('.aboutSmallNav')].filter((ul) => ul.querySelector('[data-current]'));
+
+      lists.forEach((ul) => {
+        const items = ul.querySelectorAll('.aboutSmallNav__item');
+        items.forEach((li) => {
+          const cur = li.getAttribute('data-current');
+          const match = cur && cur.trim() === key;
+          // いったん初期化
+          li.removeAttribute('hidden');
+          li.style.display = '';
+          // 該当のみ非表示
+          if (match) {
+            li.setAttribute('hidden', ''); // A11y的にもOK
+            li.style.display = 'none'; // レイアウト確実に詰める
+          }
+        });
+      });
+    }
   }
 
   const processOne = async (el) => {

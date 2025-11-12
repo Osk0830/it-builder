@@ -7086,6 +7086,11 @@ body.is-menuOn .bg-black {
   row-gap: 70px;
 }
 
+@media only screen and (max-width: 768px) {
+  .wae-section-column {
+    row-gap: 0;
+  }
+}
 /* ブロック分割定義 */
 .wae-section-column1 > .wae-section-block {
   width: 100%;

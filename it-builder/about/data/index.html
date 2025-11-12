@@ -1,32 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D733JDSWR7"></script>
-    <!-- Google tag (gtag.js) -->
-
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'G-D733JDSWR7');
-    </script>
     <meta charset="utf-8" />
-    <meta name="format-detection" content="telephone=no" />
+    <script src="/assets/js/gtm.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>サポートするデータの種類 &#8211; イットbuilder</title>
+    <meta name="format-detection" content="telephone=no" />
     <meta name="robots" content="max-image-preview:large" />
-
-    <link rel="stylesheet" type="text/css" media="all" />
-
-    <script type="text/javascript"></script>
-    <link rel="alternate" type="application/json" href="/it-builder/wp-json/wp/v2/pages/621" />
-
-    <!-- FIXME: canonical removed: <!-- FIXME: canonical removed: <link rel="canonical" href="/_orphans/" /> -->
-    -->
-    <link rel="alternate" />
-    <link rel="alternate" />
     <meta name="description" content="イットbuilderは業務のお悩みを軽快かつスピーディに改善できるWeb業務アプリ作成ツールです。標準部品を組み合わせるだけで、日頃のお困りごとを解決する業務アプリを自分たちの手で簡単に作成できます。" />
     <script src="/it-builder/wp-content/themes/itbuilder-theme/resource/js/viewport.js"></script>
     <link rel="icon" href="/it-builder/wp-content/themes/itbuilder-theme/resource/sns/favicon.ico" />
@@ -36,13 +16,19 @@
     <link rel="stylesheet" media="print" href="/it-builder/wp-content/themes/itbuilder-theme/resource/css/print.css" />
   </head>
   <body data-rsssl="1">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NK4N7GPK" height="0" width="0" style="display: none; visibility: hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <div data-include="header"></div>
+
     <div class="pageVisual" style="background-image: url(/it-builder/wp-content/uploads/2018/09/about_visual_bg.jpg)">
       <p class="pageVisual__en">
         <img src="/it-builder/wp-content/uploads/2018/07/title_data_white.png" alt="サポートするデータの種類" />
       </p>
-      <h1 class="pageVisual__title">サポートするデータの種類</h1>
+      <h1 class="pageVisual__title" data-bc-title="サポートするデータの種類">サポートするデータの種類</h1>
     </div>
+
     <div class="wae">
       <section class="wae-section mt-minus-100 aboutData-indent wae-section-margin-large wae-section-base-boder">
         <div class="wae-section-base-width">
@@ -206,33 +192,13 @@
           </div>
         </div>
       </section>
-      <section class="wae-section-html wae-section-margin-moderate">
-        <div class="inner">
-          <ul class="aboutSmallNav">
-            <li class="aboutSmallNav__item">
-              <a href="/it-builder/about/" class="aboutSmallNav__anchor">イットbuilderとは</a>
-            </li>
-            <li class="aboutSmallNav__item">
-              <a href="/it-builder/about/reason/" class="aboutSmallNav__anchor">イットbuilderが選ばれる理由</a>
-            </li>
-            <li class="aboutSmallNav__item">
-              <a href="/it-builder/about/how_to_make/" class="aboutSmallNav__anchor">イットbuilderアプリ3つの作り方</a>
-            </li>
-            <li class="aboutSmallNav__item">
-              <a href="/it-builder/about/advanced_case/" class="aboutSmallNav__anchor">高度なアプリ作成にもイットbuilder</a>
-            </li>
-          </ul>
-          <ul class="aboutSmallNav">
-            <li class="aboutSmallNav__item">
-              <a href="/it-builder/about/requirements/" class="aboutSmallNav__anchor--support">稼働環境</a>
-            </li>
-            <li class="aboutSmallNav__item">
-              <a href="/it-builder/about/parts/" class="aboutSmallNav__anchor--support">ご提供するアプリ部品</a>
-            </li>
-          </ul>
-        </div>
-      </section>
+
+      <!-- /about/階層内ナビゲーション -->
+      <div class="wae-section-html wae-section-margin-moderate">
+        <div data-include="about-nav" data-current="data"></div>
+      </div>
     </div>
+
     <div data-include="footer"></div>
 
     <script src="/it-builder/assets/js/include-loader.js" defer></script>
@@ -241,6 +207,7 @@
     <script src="/it-builder/wp-content/themes/itbuilder-theme/resource/js/lib/slick.min.js"></script>
     <script src="/it-builder/wp-content/themes/itbuilder-theme/resource/js/lib/jquery.matchHeight.js"></script>
     <script src="/it-builder/wp-content/themes/itbuilder-theme/resource/js/common.js"></script>
+    <script defer src="/it-builder/assets/js/breadcrumb-topicpath.js"></script>
 
     <div data-include="sprite"></div>
   </body>
