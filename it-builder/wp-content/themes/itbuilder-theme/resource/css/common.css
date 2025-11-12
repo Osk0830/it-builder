@@ -275,6 +275,7 @@ html {
   bottom: 19px;
   right: 19px;
   z-index: 400;
+  transition: all 0.2s ease;
 }
 
 @media only screen and (max-width: 768px) {
@@ -287,6 +288,10 @@ html {
 
 .pageTop__img {
   filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.15));
+}
+
+.pageTop:hover {
+  opacity: 0.8;
 }
 
 /* -------------------------
@@ -6424,12 +6429,6 @@ body.is-menuOn .bg-black {
 }
 .gnavList__item:nth-child(2n) {
   border-left: 1px solid #eae6de;
-}
-.gnavList__item.--borderBottom {
-  border-bottom: 1px solid #eae6de;
-}
-.gnavList__item.--borderRight {
-  border-right: 1px solid #eae6de;
 }
 .gnavList__anchor,
 .gnavList__anchor--about,
