@@ -6868,6 +6868,12 @@ body.is-menuOn .bg-black {
   position: relative;
   background: #f8f6f1;
 }
+@media only screen and (max-width: 768px) {
+  .footer__bottomArea {
+    padding-bottom: 50px;
+  }
+
+}
 .footer__bottomArea > .inner {
   display: -webkit-box;
   display: -ms-flexbox;
