@@ -6856,14 +6856,6 @@ body.is-menuOn .bg-black {
   background: #333;
   color: #fff;
 }
-.footer__topArea > .inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
 .footer__bottomArea {
   position: relative;
   background: #f8f6f1;
@@ -6941,7 +6933,6 @@ body.is-menuOn .bg-black {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   list-style: none;
-  width: 670px;
 }
 .footerNav__item {
   width: 210px;
