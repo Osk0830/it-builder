@@ -1,5 +1,5 @@
 {
-  "liveSassCompile.settings.formats": [{ "format": "expanded", "extensionName": ".css", "savePath": "/it-chan/assets/css" }],
+  "liveSassCompile.settings.formats": [{ "format": "expanded", "extensionName": ".css", "savePath": "/it-builder/assets/css" }],
   "liveServer.settings.donotShowInfoMsg": true,
   "liveSassCompile.settings.rootIsWorkspace": false,
   "liveSassCompile.settings.generateMap": true,
