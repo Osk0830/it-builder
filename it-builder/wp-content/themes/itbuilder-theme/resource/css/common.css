@@ -6864,7 +6864,12 @@ body.is-menuOn .bg-black {
   .footer__bottomArea {
     padding-bottom: 50px;
   }
-
+}
+.u-noCta .ctaBtnWrapper {
+  display: none !important;
+}
+.u-noCta .footer__bottomArea {
+  padding-bottom: 0 !important;
 }
 .footer__bottomArea > .inner {
   display: -webkit-box;
