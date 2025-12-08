@@ -14,6 +14,7 @@
       '/news/': 'お知らせ',
       '/sitemap/': 'サイトマップ',
       '/sitepolicy/': 'サイトポリシー',
+      '/app/': 'お問い合わせ'
     };
 
   const ready = (f) => (document.readyState !== 'loading' ? f() : document.addEventListener('DOMContentLoaded', f, { once: true }));
