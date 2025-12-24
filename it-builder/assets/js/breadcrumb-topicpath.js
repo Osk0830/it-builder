@@ -14,7 +14,8 @@
       '/news/': 'お知らせ',
       '/sitemap/': 'サイトマップ',
       '/sitepolicy/': 'サイトポリシー',
-      '/app/': 'お問い合わせ'
+      '/app/inquiry/otoiawase/': 'お問い合わせ',
+      '/app/inquiry/180days_trial/': '180日間無料トライアルのお申し込み',
     };
 
   const ready = (f) => (document.readyState !== 'loading' ? f() : document.addEventListener('DOMContentLoaded', f, { once: true }));
@@ -50,6 +51,40 @@
     if (inner === '/' || inner === '') {
       crumbs[0].url = null;
       return crumbs;
+    }
+
+    // /app/配下は特殊： "HOME > お問い合わせ" みたいに、/app を階層として出さない
+    if (inner.startsWith('/app/')) {
+      // ROUTE_TITLES のキーのうち inner に含まれるものを「最長一致」で拾う
+      const keys = Object.keys(ROUTE_TITLES);
+      let hit = null;
+
+      for (const k of keys) {
+        if (!k.startsWith('/app/')) continue;
+        // inner が /app/inquiry/otoiawase/thanks/ の時、k=/app/inquiry/otoiawase/ に当てたい
+        if (inner === k || inner.startsWith(k)) {
+          if (!hit || k.length > hit.length) hit = k;
+        }
+      }
+
+      // タイトルが引けた時だけ特殊表示（引けなければ通常ロジックにフォールバック）
+      if (hit) {
+        const secondLabel = ROUTE_TITLES[hit];
+        const hitAbs = ROOT.replace(/\/$/, '') + hit; // ROOT配下の絶対パス
+
+        // 第2階層：現在ページが hit そのものならリンク無し、下層なら hit へリンク
+        const isExact = norm(inner) === norm(hit);
+        crumbs.push({ name: secondLabel, url: isExact ? null : hitAbs });
+
+        // hit より下層にいる場合だけ第3階層を出す（タイトル指定がある時）
+        const isDeeper = !isExact;
+        const third = getThirdTitle();
+        if (isDeeper && third) {
+          crumbs.push({ name: third, url: null });
+        }
+
+        return crumbs;
+      }
     }
 
     const segs = inner.split('/').filter(Boolean); // ["case","case0001234"] など
