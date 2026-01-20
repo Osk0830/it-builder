@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+.u-link {
+  color: #0066cc;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.inner--pdInline {
+  @media screen and (max-width: 768px) {
+    padding-inline: 15px;
+  }
+}
+.pageLead--left {
+  text-align: left;
+  margin-inline: 0;
+  margin-bottom: 25px;
+}
+
+.formAnnotation {
+  list-style: none;
+  padding-left: 1.5em;
+  margin-bottom: 30px;
+
+  &__item {
+    line-height: 1.5;
+    margin-bottom: 0.5em;
+
+    &::before {
+      content: '※';
+      position: absolute;
+      margin-left: -1.5em;
+    }
+  }
+}
+
+.formLink {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+
+  &__link {
+    margin-left: 1em;
+  }
+}
